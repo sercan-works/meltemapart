@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   MELTEM KIZ APART — İÇERİK DOSYASI
+   MELTEMPARK KIZ APART — İÇERİK DOSYASI
    ───────────────────────────────────────────────────────────────────────────
    Sitedeki BÜTÜN yazılar, fotoğraflar ve iletişim bilgileri bu dosyadadır.
    Başka hiçbir dosyaya dokunmanıza gerek yok.
@@ -7,62 +7,62 @@
    NASIL DEĞİŞTİRİLİR
    1) Tırnak işaretlerinin ("...") İÇİNDEKİ yazıyı değiştirin.
    2) Tırnakları, virgülleri, süslü { } ve köşeli [ ] parantezleri SİLMEYİN.
-   3) Fotoğraf değiştirmek için: fotoğrafı assets/img/ klasörüne atın,
-      sonra "assets/img/fotograf-adi.jpg" şeklinde yolunu yazın.
+   3) Fotoğraf değiştirmek için: fotoğrafı assets/img/apart/ klasörüne atın,
+      sonra "assets/img/apart/fotograf-adi.jpg" şeklinde yolunu yazın.
    4) Bir maddeyi tamamen silmek isterseniz { } arasındaki bloğun tamamını,
       sonundaki virgülle birlikte silin.
    5) Kaydettikten sonra sayfa değişmiyorsa: Ctrl + Shift + R (Mac: Cmd+Shift+R)
 
-   ⚠ ŞU AN KULLANILAN FOTOĞRAFLAR GEÇİCİ ÖRNEK GÖRSELLERDİR (Unsplash).
-     Siteyi yayına almadan önce apartın gerçek fotoğraflarıyla değiştirin.
+   İÇERİK KAYNAĞI
+   Metinler, mesafeler, hizmet listesi ve fotoğraflar apartın aparthouse.com.tr
+   ilanından alınmıştır: https://aparthouse.com.tr/meltempark-kiz-apart/
+   İlanda FİYAT ve ODA TİPİ bilgisi yayınlanmadığı için burada da yer almıyor.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 window.SITE = {
 
   /* ─── Arama motoru / paylaşım bilgileri ──────────────────────────────── */
   meta: {
-    baslik: "Meltem Kız Apart | Kayseri'de Güvenli Kız Öğrenci Apartı",
-    aciklama: "Erciyes Üniversitesi'ne 5 dakika. 7/24 güvenlik, kameralı sistem, kadın yönetici, ücretsiz fiber internet ve etüt odası. Tek ve iki kişilik odalar.",
-    ogGorsel: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80",
-    site: "https://meltemkizapart.com"
+    baslik: "Meltempark Kız Apart | Eskişehir Tepebaşı Öğrenci Apartı",
+    aciklama: "Anadolu Üniversitesi'ne 13 dakika yürüme mesafesinde, çeyrek asırdır eğitimci bir aile tarafından işletilen kız öğrenci apartı. Kendi mutfağımızdan dört çeşit ev yemeği, parmak izli giriş, 7/24 kamera. Elektrik, su, doğalgaz ve sınırsız internet dahil.",
+    ogGorsel: "assets/img/apart/1.jpg",
+    site: "https://meltemparkkizapart.com"
   },
 
   /* ─── Marka ──────────────────────────────────────────────────────────── */
   marka: {
-    ad: "Meltem Kız Apart",
-    kisaAd: "Meltem",
-    slogan: "Ailenizin gönlü rahat, sizin eviniz sıcak.",
-    kurulusYili: "2015"
+    ad: "Meltempark Kız Apart",
+    kisaAd: "Meltempark",
+    slogan: "Çeyrek asırdır eğitimci bir ailenin emanetindesiniz.",
+    kurulusYili: "25+"
   },
 
   /* ─── İletişim ───────────────────────────────────────────────────────── */
   iletisim: {
-    telefon: "0 (352) 123 45 67",
-    telefonHam: "+903521234567",            // tel: linki için — boşluksuz, ülke kodlu
-    whatsapp: "905321234567",               // + ve boşluk OLMADAN, ülke koduyla
-    whatsappMesaj: "Merhaba, Meltem Kız Apart hakkında bilgi almak istiyorum.",
-    eposta: "info@meltemkizapart.com",
-    adres: "Köşk Mah. Üniversite Cad. No: 42, Melikgazi / KAYSERİ",
+    telefon: "0 532 277 38 01",
+    telefonHam: "+905322773801",             // tel: linki için — boşluksuz, ülke kodlu
+    whatsapp: "905322773801",                // + ve boşluk OLMADAN, ülke koduyla
+    whatsappMesaj: "Merhaba, Meltempark Kız Apart hakkında bilgi ve fiyat almak istiyorum.",
+    eposta: "",                              // İlanda e-posta yok. Varsa yazın, yoksa boş bırakın.
+    adres: "Bahçelievler Mah. Namık Kemal Sokak, 26170 Tepebaşı / ESKİŞEHİR",
     adresKisa: "Tepebaşı / Eskişehir",
-    calismaSaati: "Her gün 09:00 – 21:00 arası ulaşabilirsiniz",
+    calismaSaati: "Fiyat ve müsaitlik için gün içinde telefonla ulaşabilirsiniz",
 
-    // "Yol tarifi al" butonunun açtığı adres
-    haritaUrl: "https://www.google.com/maps/search/?api=1&query=Erciyes+Üniversitesi+Melikgazi+Kayseri",
+    // "Yol tarifi al" butonunun açtığı adres (apartın gerçek koordinatları)
+    haritaUrl: "https://www.google.com/maps/search/?api=1&query=39.788986,30.514682",
 
-    // Haritadaki gömülü görünüm (Google Maps > Paylaş > Harita yerleştir > src="..." kısmı)
-    haritaEmbed: "https://www.google.com/maps?q=Erciyes%20%C3%9Cniversitesi%20Melikgazi%20Kayseri&output=embed"
+    // Haritadaki gömülü görünüm
+    haritaEmbed: "https://www.google.com/maps?q=39.788986,30.514682&hl=tr&z=17&output=embed"
   },
 
   /* ─── Sosyal medya ───────────────────────────────────────────────────── */
-  sosyal: [
-    { ikon: "instagram", ad: "Instagram", url: "https://instagram.com/" },
-    { ikon: "facebook",  ad: "Facebook",  url: "https://facebook.com/" }
-  ],
+  // İlanda sosyal medya hesabı belirtilmemiş. Hesabınız varsa url'leri yazın,
+  // yoksa aşağıdaki satırları silip  sosyal: []  bırakın.
+  sosyal: [],
 
   /* ─── Üst menü ───────────────────────────────────────────────────────── */
   navigasyon: [
     { ad: "Hakkımızda", hedef: "#hakkimizda" },
-    { ad: "Odalarımız", hedef: "#odalar" },
     { ad: "Olanaklar",  hedef: "#olanaklar" },
     { ad: "Galeri",     hedef: "#galeri" },
     { ad: "Konum",      hedef: "#konum" },
@@ -71,297 +71,223 @@ window.SITE = {
 
   /* ─── HERO — sayfanın en üstü ────────────────────────────────────────── */
   hero: {
-    eyebrow: "2015'ten beri güvenli yuvanız",
+    eyebrow: "Çeyrek asırdır Tepebaşı'nda",
     // <em> ile sardığınız kelime vurgu rengiyle görünür
-    baslik: "Evinden Uzakta, <em>Kendini Evinde</em> Hisset",
-    metin: "Erciyes Üniversitesi'ne yürüme mesafesinde, 7/24 güvenlikli, kadın yöneticili kız öğrenci apartı. Ders çalışacağın sessiz bir etüt odası, sıcak bir kahvaltı ve arkadaşlarınla paylaşacağın huzurlu bir ortam seni bekliyor.",
+    baslik: "Kızınızı <em>Emanet</em> Edebileceğiniz Bir Apart",
+    metin: "Eğitimci bir aile tarafından, çalışma prensiplerinden taviz vermeden işletilen kız öğrenci apartı. Anadolu Üniversitesi'ne yürüme mesafesinde, kalabalık ve gürültülü çevrelerden uzakta. Kendi mutfağımızda pişen dört çeşit ev yemeği, elektrik, su, doğalgaz ve sınırsız internet aidata dahildir.",
 
     istatistikler: [
-      { sayi: "120", etiket: "Öğrenci Kapasitesi" },
-      { sayi: "7/24", etiket: "Güvenlik & Kamera" },
-      { sayi: "5 dk", etiket: "Kampüse Mesafe" }
+      { sayi: "25+", etiket: "Yıllık Tecrübe" },
+      { sayi: "13 dk", etiket: "Anadolu Ü. Yürüme" },
+      { sayi: "4", etiket: "Çeşit Akşam Yemeği" }
     ],
 
-    butonAna: "WhatsApp'tan Yer Ayır",
-    butonIkincil: "Odaları İncele",
+    butonAna: "WhatsApp'tan Bilgi Al",
+    butonIkincil: "Olanakları Gör",
 
     // Sağdaki büyük slider — istediğiniz kadar fotoğraf ekleyebilirsiniz
     gorseller: [
       {
-        src: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1400&q=80",
-        alt: "Meltem Kız Apart ortak oturma salonu",
-        baslik: "Ortak Yaşam Alanı",
-        altBaslik: "Arkadaşlarınla vakit geçir"
+        src: "assets/img/apart/1.jpg",
+        alt: "Meltempark Kız Apart binası dış görünüm",
+        baslik: "Sakin Bir Sokakta",
+        altBaslik: "Gürültüden uzak, üniversiteye yakın"
       },
       {
-        src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1400&q=80",
-        alt: "Tek kişilik öğrenci odası",
-        baslik: "Ferah Odalar",
-        altBaslik: "Her oda özel banyolu"
+        src: "assets/img/apart/foto-31.jpg",
+        alt: "Apartın ortak yemek salonu",
+        baslik: "Kendi Mutfağımız",
+        altBaslik: "Dört çeşit ev yemeği"
       },
       {
-        src: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1400&q=80",
-        alt: "Sessiz etüt ve ders çalışma odası",
-        baslik: "Etüt Odası",
-        altBaslik: "Sınav döneminde 24 saat açık"
+        src: "assets/img/apart/foto-19.jpg",
+        alt: "Ferah ve aydınlık öğrenci odası",
+        baslik: "Karanlık Oda Yok",
+        altBaslik: "Ferah ve geniş odalar"
       },
       {
-        src: "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=1400&q=80",
-        alt: "Ortak kullanım mutfağı",
-        baslik: "Tam Donanımlı Mutfak",
-        altBaslik: "Canın ne isterse"
+        src: "assets/img/apart/foto-23.jpg",
+        alt: "Daire mutfağı — ocak, buzdolabı ve tezgâh",
+        baslik: "Her Dairede Mutfak",
+        altBaslik: "Ocak, buzdolabı ve yemek masası"
       }
     ]
   },
 
   /* ─── Hero altındaki güven şeridi (4 adet) ───────────────────────────── */
   guvenRozetleri: [
-    { ikon: "shield-check",  yazi: "7/24 Güvenlik Görevlisi" },
-    { ikon: "cctv",          yazi: "Kameralı Ortak Alanlar" },
-    { ikon: "user-round",    yazi: "Kadın Yönetici" },
-    { ikon: "graduation-cap", yazi: "Kampüse 5 Dakika" }
+    { ikon: "fingerprint",    yazi: "Parmak İzi ile Giriş" },
+    { ikon: "cctv",           yazi: "7/24 Kamera Sistemi" },
+    { ikon: "utensils",       yazi: "Akşam Yemeği Dahil" },
+    { ikon: "graduation-cap", yazi: "Anadolu Ü. 13 Dakika" }
   ],
 
   /* ─── Hakkımızda ─────────────────────────────────────────────────────── */
   hakkimizda: {
     eyebrow: "Hakkımızda",
-    baslik: "Kızınız Burada <em>Ailesinin Yanında</em> Gibi",
+    baslik: "Eğitimci Bir Ailenin <em>Çeyrek Asırlık</em> Emeği",
     paragraflar: [
-      "Meltem Kız Apart, 2015 yılından bu yana Kayseri'de okuyan üniversiteli kızlarımızı ağırlıyor. Bir apart işletmesinden çok, evinden ilk kez ayrılan bir gencin ikinci evi olmayı hedefliyoruz.",
-      "Girişte kartlı geçiş sistemi, ortak alanlarda kamera ve her gece nöbetçi görevlimiz var. Yöneticimiz apartta ikamet ediyor; bir sorun olduğunda kızlarımız kapıyı çalabileceği birini her zaman buluyor."
+      "Meltempark Kız Apart, eğitimci bir aile tarafından çeyrek asırdır, çalışma prensiplerinden taviz vermeden hizmet vermektedir. İlklerin öncüsü olan apartımız, kendi mutfağında ev yemekleri statüsünde, kızlarımızın önerileri dikkate alınarak dört çeşit akşam yemeği sunmaktadır.",
+      "Apartımız dört katlı ve yirmi daireden oluşur; asansörlüdür ve her daire kendi kombisi ile ısınmaktadır. Karanlık oda yoktur, odalarımız ferah ve geniştir. Mutfak ve banyoların temizliği haftada minimum üç gün görevlimiz tarafından yapılır — özelinize duyduğumuz saygıdan dolayı odalarınıza temizlik için girmiyoruz."
     ],
     maddeler: [
-      "Velilerle düzenli bilgilendirme ve iletişim",
-      "Haftalık oda temizliği, günlük ortak alan bakımı",
-      "Her sabah açık büfe kahvaltı",
-      "Giriş–çıkış saatlerinde veli onaylı düzen"
+      "Girişler parmak okuma ile; kargo ve sipariş getirenler dahil görevli olmayan kimse katlara çıkamaz",
+      "Apartın çevresi 24 saat kayıt yapan kamera sistemiyle izlenir",
+      "Hastalık ve acil durumlarda kendi aracımızla hastaneye götürür, gerekirse aileyle iletişime geçeriz",
+      "Nevresim ve ütü dışında tüm ihtiyaçlar tarafımızdan karşılanır"
     ],
-    gorsel1: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=80",
-    gorsel1Alt: "Apartın ortak oturma alanı",
-    gorsel2: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=700&q=80",
-    gorsel2Alt: "Öğrenci odasından bir kesit",
-    imzaAd: "Meltem Yıldırım",
-    imzaUnvan: "Apart Yöneticisi",
-    imzaGorsel: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80"
-  },
-
-  /* ─── Oda tipleri ────────────────────────────────────────────────────── */
-  odalar: {
-    eyebrow: "Konaklama",
-    baslik: "Oda Tiplerimiz",
-    lede: "Bütçenize ve alışkanlıklarınıza uygun üç farklı seçenek. Tüm odalarda özel banyo, çalışma masası ve klima standarttır.",
-    fiyatNotu: "Fiyatlara kahvaltı, temizlik, internet, elektrik, su ve doğalgaz dahildir.",
-    butonYazi: "Bu Oda İçin Bilgi Al",
-    liste: [
-      {
-        ad: "Tek Kişilik Oda",
-        gorsel: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=80",
-        gorselAlt: "Tek kişilik öğrenci odası",
-        metre: "14 m²",
-        rozet: "",
-        aciklama: "Kendi alanını isteyenler için. Sessiz, düzenli ve tamamen sana ait.",
-        fiyat: "12.500",
-        fiyatBirim: "₺ / ay",
-        ozellikler: [
-          "Tek kişilik yatak ve yatak takımı",
-          "Odaya özel duş ve tuvalet",
-          "Geniş çalışma masası + kitaplık",
-          "Kişisel gardırop ve çekmece",
-          "Klima ve doğalgaz peteği"
-        ]
-      },
-      {
-        ad: "İki Kişilik Oda",
-        gorsel: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80",
-        gorselAlt: "İki kişilik paylaşımlı öğrenci odası",
-        metre: "20 m²",
-        rozet: "En Çok Tercih Edilen",
-        aciklama: "Arkadaşınla ya da yeni tanışacağın biriyle paylaş, bütçene daha uygun olsun.",
-        fiyat: "8.750",
-        fiyatBirim: "₺ / kişi / ay",
-        ozellikler: [
-          "İki ayrı tek kişilik yatak",
-          "Odaya özel duş ve tuvalet",
-          "Kişiye özel çalışma masası",
-          "İki ayrı gardırop",
-          "Klima ve doğalgaz peteği"
-        ]
-      },
-      {
-        ad: "Suit Oda",
-        gorsel: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=80",
-        gorselAlt: "Balkonlu geniş suit oda",
-        metre: "26 m²",
-        rozet: "Sınırlı Sayıda",
-        aciklama: "Balkonlu, mini mutfaklı ve daha geniş. Uzun süre kalacaklar için ideal.",
-        fiyat: "16.900",
-        fiyatBirim: "₺ / ay",
-        ozellikler: [
-          "Geniş tek kişilik yatak",
-          "Balkon ve manzara",
-          "Mini mutfak (ocak + buzdolabı)",
-          "Oturma köşesi ve TV",
-          "Klima ve doğalgaz peteği"
-        ]
-      }
-    ]
+    gorsel1: "assets/img/apart/1.jpg",
+    gorsel1Alt: "Meltempark Kız Apart binası",
+    gorsel2: "assets/img/apart/foto-14.jpg",
+    gorsel2Alt: "Daire içi koridor ve giriş",
+    imzaAd: "Apart Yönetimi",
+    imzaUnvan: "37 yılını eğitime adamış bir eğitimci",
+    imzaGorsel: ""                            // Yönetici fotoğrafı varsa yolunu yazın
   },
 
   /* ─── Olanaklar ──────────────────────────────────────────────────────── */
   olanaklar: {
     eyebrow: "Olanaklar",
     baslik: "Apartımızda Neler Var?",
-    lede: "Ders çalışmaktan çamaşır yıkamaya, kahvaltıdan güvenliğe kadar günlük hayatını kolaylaştıracak her şey hazır.",
+    lede: "Elektrik, su, doğalgaz, internet ve akşam yemeği aidata dahildir. Ay sonunda sürpriz bir fatura gelmez.",
     liste: [
-      { ikon: "wifi",          baslik: "Ücretsiz Fiber İnternet",   metin: "Her odaya çekilmiş 100 Mbps fiber hat. Online derste bağlantı derdi yok." },
-      { ikon: "book-open",     baslik: "Sessiz Etüt Odası",         metin: "Kişiye özel çalışma masaları. Sınav döneminde 24 saat açık." },
-      { ikon: "washing-machine", baslik: "Çamaşırhane",             metin: "Çamaşır ve kurutma makineleri ücretsiz. Ütü ve askı alanı mevcut." },
-      { ikon: "chef-hat",      baslik: "Ortak Mutfak",              metin: "Ocak, fırın, mikrodalga ve kişisel dolaplar. Canın ne çekerse." },
-      { ikon: "croissant",     baslik: "Açık Büfe Kahvaltı",        metin: "Her sabah 07:30 – 10:30 arası, aidata dahil." },
-      { ikon: "sparkles",      baslik: "Haftalık Temizlik",         metin: "Odalar haftada bir, ortak alanlar her gün temizlenir." },
-      { ikon: "key-round",     baslik: "Kartlı Giriş Sistemi",      metin: "Apart girişi kartlı. Dışarıdan kimse izinsiz giremez." },
-      { ikon: "cctv",          baslik: "Kamera Sistemi",            metin: "Tüm ortak alanlar ve giriş 7/24 kayıt altında." },
-      { ikon: "snowflake",     baslik: "Klima & Merkezi Isıtma",    metin: "Yazın serin, kışın sıcak. Faturalar aidata dahil." },
-      { ikon: "car-front",     baslik: "Kapalı Otopark",            metin: "Aileniz ziyarete geldiğinde park sorunu yaşamaz." }
+      { ikon: "utensils",        baslik: "Dört Çeşit Akşam Yemeği",  metin: "Kendi mutfağımızda, ev yemekleri statüsünde. Menü kızlarımızın önerileri dikkate alınarak belirlenir." },
+      { ikon: "fingerprint",     baslik: "Parmak İzi ile Giriş",     metin: "Kızlarımızın kaldığı katlara kargo ve sipariş getirenler dahil görevli olmayan kimse çıkamaz." },
+      { ikon: "cctv",            baslik: "7/24 Kamera Sistemi",      metin: "Apartın çevresi 24 saat kayıt yapan kamera sistemiyle izlenmektedir." },
+      { ikon: "shield-check",    baslik: "7/24 Güvenlik",            metin: "Acil durumlarda kendi aracımızla hastaneye götürür, aileyi bilgilendiririz." },
+      { ikon: "wifi",            baslik: "Sınırsız Fiber İnternet",  metin: "Her dairede dağıtıcı var; sınırsız olduğu için kota ya da kısıtlama yaşanmaz." },
+      { ikon: "chef-hat",        baslik: "Daire Mutfağı",            metin: "Doğalgaza bağlı ocak, buzdolabı ve yemek masası — canınız çektiğinde kendiniz de pişirebilirsiniz." },
+      { ikon: "sparkles",        baslik: "Haftada 3 Gün Temizlik",   metin: "Mutfak ve banyoların temizliği görevlimiz tarafından yapılır. Odalarınıza girilmez." },
+      { ikon: "washing-machine", baslik: "Çamaşır Makinesi & Ütü",   metin: "Çamaşırhane ve ütü kullanımı apart içinde mevcuttur." },
+      { ikon: "flame",           baslik: "Daireye Özel Kombi",       metin: "Her daire kendi kombisi ile ısınır; sıcaklığı kendiniz ayarlarsınız." },
+      { ikon: "arrow-up-down",   baslik: "Asansör",                  metin: "Dört katlı binamız asansörlüdür." },
+      { ikon: "armchair",        baslik: "Dinlenme Alanı & TV",      metin: "Ortak dinlenme alanı, televizyon ve kantin apart içinde." },
+      { ikon: "trees",           baslik: "Bahçe",                    metin: "Havanın güzel olduğu günlerde vakit geçirebileceğiniz bahçemiz var." },
+      { ikon: "cigarette-off",   baslik: "Sigarasız Alan",           metin: "Apartımız sigarasız alandır." },
+      { ikon: "concierge-bell",  baslik: "Resepsiyon",               metin: "Giriş katında resepsiyon; bir ihtiyacınızda ulaşabileceğiniz biri her zaman var." }
     ]
   },
 
-  /* ─── Galeri (ilk 8 fotoğraf; devamı partials/galeri-devami.html) ────── */
+  /* ─── Galeri (ilk 9 fotoğraf; devamı "Daha Fazla" butonuyla gelir) ────── */
   galeri: {
     eyebrow: "Galeri",
     baslik: "Apartımızdan Kareler",
-    lede: "Fotoğrafa tıklayarak büyütebilirsiniz. Yerinde görmek isterseniz randevu alın, sizi gezdirelim.",
+    lede: "Fotoğrafa tıklayarak büyütebilirsiniz. Yerinde görmek isterseniz arayın, sizi gezdirelim.",
     butonYazi: "Daha Fazla Fotoğraf",
     liste: [
-      { src: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=70", alt: "Ortak oturma salonu" },
-      { src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1400&q=80",    kucuk: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=70",    alt: "Tek kişilik oda" },
-      { src: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=70", alt: "Etüt odası" },
-      { src: "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=1400&q=80",    kucuk: "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&q=70",    alt: "Ortak mutfak" },
-      { src: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=70", alt: "Yatak odası detayı" },
-      { src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=70", alt: "Dinlenme köşesi" },
-      { src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=70", alt: "Suit oda" },
-      { src: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=70", alt: "İki kişilik oda" },
-      { src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=70", alt: "Aydınlık çalışma köşesi" }
+      { src: "assets/img/apart/1.jpg",       kucuk: "assets/img/apart/1.jpg",       alt: "Apart binası dış görünüm" },
+      { src: "assets/img/apart/foto-19.jpg", kucuk: "assets/img/apart/foto-19.jpg", alt: "Tek kişilik yatak ve çalışma masası" },
+      { src: "assets/img/apart/foto-31.jpg", kucuk: "assets/img/apart/foto-31.jpg", alt: "Ortak yemek salonu" },
+      { src: "assets/img/apart/foto-23.jpg", kucuk: "assets/img/apart/foto-23.jpg", alt: "Daire mutfağı ve giriş kapısı" },
+      { src: "assets/img/apart/2.jpg",       kucuk: "assets/img/apart/2.jpg",       alt: "Gardırop, çalışma masası ve yatak" },
+      { src: "assets/img/apart/foto-15.jpg", kucuk: "assets/img/apart/foto-15.jpg", alt: "Daire banyosu" },
+      { src: "assets/img/apart/foto-16.jpg", kucuk: "assets/img/apart/foto-16.jpg", alt: "Mutfakta ocak, buzdolabı ve yemek masası" },
+      { src: "assets/img/apart/foto-27.jpg", kucuk: "assets/img/apart/foto-27.jpg", alt: "Aydınlık öğrenci odası" },
+      { src: "assets/img/apart/foto-14.jpg", kucuk: "assets/img/apart/foto-14.jpg", alt: "Daire içi koridor" }
     ],
 
     // "Daha Fazla Fotoğraf" butonuna basılınca yüklenenler.
     // Bu fotoğraflar sayfa açılırken indirilmez — ziyaretçi isteyince gelir.
     devam: [
-      { src: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=70", alt: "Oturma köşesi" },
-      { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=70", alt: "Ortak salon" },
-      { src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=70", alt: "Dinlenme alanı" },
-      { src: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=70", alt: "Oda detayı" },
-      { src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=70", alt: "Mutfak köşesi" },
-      { src: "https://images.unsplash.com/photo-1571624436279-b272aff752b5?w=1400&q=80", kucuk: "https://images.unsplash.com/photo-1571624436279-b272aff752b5?w=600&q=70", alt: "Çamaşırhane" }
+      { src: "assets/img/apart/foto-12.jpg", kucuk: "assets/img/apart/foto-12.jpg", alt: "Yatak ve dolap" },
+      { src: "assets/img/apart/foto-13.jpg", kucuk: "assets/img/apart/foto-13.jpg", alt: "Çalışma masası ve raflar" },
+      { src: "assets/img/apart/foto-21.jpg", kucuk: "assets/img/apart/foto-21.jpg", alt: "Pencere kenarında yatak" },
+      { src: "assets/img/apart/foto-22.jpg", kucuk: "assets/img/apart/foto-22.jpg", alt: "Oda detayı" },
+      { src: "assets/img/apart/foto-25.jpg", kucuk: "assets/img/apart/foto-25.jpg", alt: "Mutfak tezgâhı ve buzdolabı" },
+      { src: "assets/img/apart/foto-26.jpg", kucuk: "assets/img/apart/foto-26.jpg", alt: "Mutfakta ocak ve tezgâh" },
+      { src: "assets/img/apart/foto-30.jpg", kucuk: "assets/img/apart/foto-30.jpg", alt: "Oda ve çalışma alanı" },
+      // Aşağıdaki fotoğrafta öğrencilerin yüzleri görünüyor. Kalsın istemezseniz
+      // bu satırı silin.
+      { src: "assets/img/apart/wa-00-13-24.jpg", kucuk: "assets/img/apart/wa-00-13-24.jpg", alt: "Akşam yemeği servisi" }
     ]
   },
 
   /* ─── Konum & ulaşım ─────────────────────────────────────────────────── */
   konum: {
     eyebrow: "Konum",
-    baslik: "Her Yere Yakın, <em>Gürültüden Uzak</em>",
-    lede: "Kampüse yürüme mesafesinde ama sakin bir sokakta. Market, eczane ve durak kapının önünde.",
+    baslik: "Üniversiteye Yakın, <em>Gürültüden Uzak</em>",
+    lede: "Anadolu Üniversitesi'ne yürüme mesafesindeyiz; ek bir ulaşım masrafı çıkmaz. Duraklar yaklaşık 50 metre uzaklıkta. Sosyal tesislere ve alışveriş merkezlerine de yürüyerek gidebilirsiniz.",
     haritaButon: "Haritayı Göster",
     haritaNot: "Haritayı açtığınızda Google Maps çerezleri yüklenir.",
     yolTarifiButon: "Yol Tarifi Al",
+    not: "Eskişehir Teknik Üniversitesi'ne toplu taşımayla yaklaşık 20 dakika, Osmangazi Üniversitesi'ne 25–30 dakika sürer; ikisine de aynı duraklardan ulaşılır. Aylık ulaşım kartı abonman ücreti 250 ₺'dir.",
     yakinlar: [
-      { ikon: "graduation-cap", ad: "Erciyes Üniversitesi",   mesafe: "5 dk yürüme" },
-      { ikon: "bus-front",      ad: "Tramvay & Otobüs Durağı", mesafe: "2 dk yürüme" },
-      { ikon: "shopping-cart",  ad: "Market ve Eczane",        mesafe: "1 dk yürüme" },
-      { ikon: "heart-pulse",    ad: "Şehir Hastanesi",         mesafe: "8 dk araçla" },
-      { ikon: "utensils",       ad: "Kafe & Yemek Sokağı",     mesafe: "4 dk yürüme" },
-      { ikon: "landmark",       ad: "Şehir Merkezi (Forum)",   mesafe: "12 dk araçla" }
+      { ikon: "graduation-cap", ad: "Anadolu Üniversitesi",                 mesafe: "13 dk (945 m)" },
+      { ikon: "graduation-cap", ad: "Anadolu Ü. — Yunus Emre Kapısı",       mesafe: "14 dk (966 m)" },
+      { ikon: "shopping-cart",  ad: "Espark AVM",                           mesafe: "16 dk (1,2 km)" },
+      { ikon: "graduation-cap", ad: "Anadolu Ü. — Cuma Kapısı",             mesafe: "26 dk (1,8 km)" },
+      { ikon: "graduation-cap", ad: "Anadolu Ü. — Eczacılık Kapısı",        mesafe: "31 dk (2,2 km)" },
+      { ikon: "bus-front",      ad: "Otobüs & Tramvay Durağı",              mesafe: "yaklaşık 50 m" }
     ]
   },
 
-  /* ─── Öğrenci & veli yorumları ───────────────────────────────────────── */
-  yorumlar: {
-    eyebrow: "Yorumlar",
-    baslik: "Bizde Kalanlar Ne Diyor?",
-    liste: [
-      {
-        ad: "Zeynep A.",
-        rol: "Hemşirelik, 3. Sınıf",
-        puan: 5,
-        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=160&q=80",
-        metin: "İki yıldır buradayım. En sevdiğim şey etüt odası — sınav haftası gece 3'te bile çalışabiliyorum. Meltem abla da bir şeye ihtiyacımız olduğunda hemen ilgileniyor."
-      },
-      {
-        ad: "Elif K.",
-        rol: "Mimarlık, 2. Sınıf",
-        puan: 5,
-        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=160&q=80",
-        metin: "Maket ve proje işleri geç bitiyor, gece dönüşlerde güvenlik olması ailemi çok rahatlattı. Odalar da göründüğü gibi, fotoğraflarla birebir aynı."
-      },
-      {
-        ad: "Ayşe Hanım",
-        rol: "Öğrenci Velisi",
-        puan: 5,
-        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&q=80",
-        metin: "Kızımı ilk defa şehir dışına gönderiyordum, açıkçası çok tedirgindim. Yönetimin apartta oturuyor olması ve düzenli bilgilendirme yapmaları içimi rahatlattı."
-      },
-      {
-        ad: "Melisa T.",
-        rol: "İşletme, 1. Sınıf",
-        puan: 4,
-        avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=160&q=80",
-        metin: "Kahvaltısı gerçekten güzel, sabah derse aç gitmiyorum. Kampüse yürüyerek gitmek de büyük konfor, yol parası diye bir gider kalmadı."
-      }
-    ]
+  /* ─── Yönetimden not (uydurma yorum yerine gerçek metin) ─────────────── */
+  yonetimNotu: {
+    eyebrow: "Velilerimize",
+    baslik: "Bir Eğitimciden Velilere Not",
+    alinti: "37 yılını eğitime adamış ve iki kız büyütmüş bir eğitimci olarak velilerimize önerim: lütfen çocuğunuzu emanet edeceğiniz yeri araştırın. Aceleye getirmeyin, sonradan pişman olacağınız bir hata yapmayın.",
+    imzaAd: "Apart Yönetimi",
+    imzaUnvan: "Meltempark Kız Apart",
+    ekMetin: "Kızlarımızı emanetimiz olarak kabul eden bir anlayışla çalışıyoruz. Apartı yerinde görmek, odaları ve ortak alanları incelemek isterseniz bizi arayın — sizi gezdirelim."
   },
 
   /* ─── Sıkça sorulan sorular ──────────────────────────────────────────── */
   sss: {
     eyebrow: "S.S.S.",
     baslik: "Sıkça Sorulan Sorular",
-    lede: "Aklınıza takılan başka bir şey varsa WhatsApp'tan yazmanız yeterli, hemen dönüyoruz.",
+    lede: "Aklınıza takılan başka bir şey varsa aramanız ya da WhatsApp'tan yazmanız yeterli.",
     liste: [
       {
+        soru: "Fiyat ne kadar?",
+        cevap: "Güncel fiyat ve rezervasyon bilgisi için 0 532 277 38 01 numarasından telefonla ya da WhatsApp'tan bize ulaşabilirsiniz."
+      },
+      {
         soru: "Aidata neler dahil?",
-        cevap: "Elektrik, su, doğalgaz, fiber internet, açık büfe kahvaltı, haftalık oda temizliği ve çamaşırhane kullanımı aidata dahildir. Ay sonunda sürpriz bir fatura gelmez."
+        cevap: "Doğalgaz, elektrik, su ve sınırsız internet aidata dahildir. Ayrıca kendi mutfağımızda pişen dört çeşit akşam yemeği de dahildir; mutfak ve banyo temizliği haftada minimum üç gün görevlimiz tarafından yapılır."
       },
       {
-        soru: "Depozito alıyor musunuz?",
-        cevap: "Evet, bir aylık kira tutarında depozito alınır. Çıkışta oda hasarsız teslim edildiğinde depozito eksiksiz iade edilir."
+        soru: "Yemek hizmeti var mı?",
+        cevap: "Evet. Kendi mutfağımızda, ev yemekleri statüsünde ve kızlarımızın önerileri dikkate alınarak hazırlanan dört çeşit akşam yemeği sunuyoruz. Bu hem hijyen hem de zaman ve bütçe açısından kolaylık sağlıyor."
       },
       {
-        soru: "Giriş–çıkış saati var mı?",
-        cevap: "Apart girişi kartlıdır ve 7/24 açıktır. Ancak 18 yaş altı öğrencilerimizde velinin talebi doğrultusunda giriş saati uygulanır ve geç kalınması durumunda veli bilgilendirilir."
+        soru: "Yanımda ne getirmem gerekiyor?",
+        cevap: "Nevresim ve ütü dışında tüm ihtiyaçlar tarafımızdan karşılanmaktadır."
       },
       {
-        soru: "Erkek misafir kabul ediliyor mu?",
-        cevap: "Katlara ve odalara erkek misafir kabul edilmez. Aile ziyaretleri giriş katındaki misafir salonunda ağırlanır; baba ve kardeşler yönetim bilgisi dahilinde odaya çıkabilir."
+        soru: "Güvenlik nasıl sağlanıyor?",
+        cevap: "Apart girişleri parmak okuma sistemiyle yapılır. Kızlarımızın kaldığı katlara kargo ve sipariş getirenler dahil görevli olmayan hiç kimse çıkamaz. Apartın çevresi 24 saat kayıt yapan kamera sistemiyle izlenmektedir."
       },
       {
-        soru: "Sözleşme kaç aylık?",
-        cevap: "Standart sözleşmemiz 9 aylıktır (Eylül – Mayıs). Yaz okulu için 3 aylık ayrı sözleşme yapılabilir, dilerseniz 12 ay boyunca da kalabilirsiniz."
+        soru: "Üniversiteye ulaşım nasıl?",
+        cevap: "Anadolu Üniversitesi'ne yürüme mesafesindeyiz (13 dk, 945 m) ve ek bir ulaşım masrafı çıkmaz. Eskişehir Teknik Üniversitesi'ne toplu taşımayla yaklaşık 20 dakika, Osmangazi Üniversitesi'ne 25–30 dakika sürer; duraklar yaklaşık 50 metre uzaklıkta. Aylık ulaşım kartı abonman ücreti 250 ₺'dir."
+      },
+      {
+        soru: "Odalar nasıl?",
+        cevap: "Apartımızda karanlık oda yoktur; odalarımız ferah ve geniştir. Bina dört katlı ve yirmi daireden oluşur, asansörlüdür. Her daire kendi kombisi ile ısınır."
+      },
+      {
+        soru: "Evcil hayvan kabul ediliyor mu?",
+        cevap: "Hayır, apartımızda evcil hayvan kabul edilmemektedir."
       },
       {
         soru: "Odayı önceden görebilir miyim?",
-        cevap: "Elbette. WhatsApp'tan yazıp randevu alın; size uygun bir saatte apartı gezdirir, tüm ortak alanları gösteririz. Şehir dışındaysanız görüntülü tur da yapıyoruz."
-      },
-      {
-        soru: "KYK bursu veya öğrenim kredisi ile ödeme yapabilir miyim?",
-        cevap: "Ödemeler aylık olarak alınmaktadır, bursunuzun yattığı tarihe göre ödeme gününüzü ayarlayabiliriz. Peşin ödemelerde indirim uygulanır."
+        cevap: "Elbette. Bizi arayın, size uygun bir saatte apartı gezdirelim; odaları ve tüm ortak alanları gösterelim."
       }
     ]
   },
 
   /* ─── Kapanış çağrısı ────────────────────────────────────────────────── */
   cta: {
-    baslik: "Yerler Dolmadan Odanı Ayırt",
-    metin: "Kayıt dönemi başladı ve sınırlı sayıda odamız kaldı. WhatsApp'tan yazın, müsait odaları ve güncel fiyatları hemen paylaşalım.",
+    baslik: "Fiyat ve Müsaitlik İçin Arayın",
+    metin: "Güncel fiyatlarımızı ve boş yerlerimizi telefonla ya da WhatsApp'tan öğrenebilirsiniz. Apartı yerinde görmek isterseniz randevu oluşturalım.",
     butonAna: "WhatsApp'tan Yaz",
     butonIkincil: "Hemen Ara"
   },
 
   /* ─── Footer ─────────────────────────────────────────────────────────── */
   footer: {
-    metin: "Kayseri'de üniversite okuyan kızlarımız için güvenli, temiz ve sıcak bir yuva. 2015'ten bu yana aynı özenle.",
-    telif: "Meltem Kız Apart. Tüm hakları saklıdır.",
-    altLinkler: [
-      { ad: "KVKK Aydınlatma Metni", hedef: "partials/kvkk.html", modal: true }
-    ]
+    metin: "Eskişehir Tepebaşı'nda, eğitimci bir aile tarafından çeyrek asırdır işletilen kız öğrenci apartı. Anadolu Üniversitesi'ne yürüme mesafesinde.",
+    telif: "Meltempark Kız Apart. Tüm hakları saklıdır."
   },
 
   /* ─── Mobil alt bar ve sabit butonlar ────────────────────────────────── */

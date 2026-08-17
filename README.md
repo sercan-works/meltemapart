@@ -1,4 +1,4 @@
-# Meltem Kız Apart — Tanıtım Sitesi
+# Meltempark Kız Apart — Tanıtım Sitesi
 
 Tek sayfalık, tamamen statik tanıtım sitesi. Sunucu, veritabanı, panel ve derleme (build) adımı yoktur.
 Sitedeki **tüm içerik tek bir dosyadadır: [`js/db.js`](js/db.js)**.
@@ -12,14 +12,14 @@ Sitedeki **tüm içerik tek bir dosyadadır: [`js/db.js`](js/db.js)**.
 3. Kaydedin, tarayıcıda sayfayı yenileyin.
 
 ```js
-telefon: "0 (352) 123 45 67",        // ← sadece bu yazıyı değiştirin
-whatsapp: "905321234567",            // ← + ve boşluk OLMADAN, ülke koduyla
+telefon: "0 532 277 38 01",          // ← sadece bu yazıyı değiştirin
+whatsapp: "905322773801",            // ← + ve boşluk OLMADAN, ülke koduyla
 ```
 
 **Dikkat:**
 
 - Tırnakları, virgülleri, süslü `{ }` ve köşeli `[ ]` parantezleri silmeyin.
-- Bir oda / olanak / soru maddesini tamamen kaldıracaksanız `{ ... }` bloğunun **tamamını**, sonundaki virgülle birlikte silin.
+- Bir olanak / soru / fotoğraf maddesini tamamen kaldıracaksanız `{ ... }` bloğunun **tamamını**, sonundaki virgülle birlikte silin.
 - Değişiklik ekrana yansımıyorsa **Ctrl + Shift + R** (Mac: **Cmd + Shift + R**) ile önbelleği atlayarak yenileyin.
 - Bir yazıyı yanlışlıkla silerseniz sayfa boşalmaz; o alan `index.html`'deki hazır metne döner.
 
@@ -31,7 +31,6 @@ whatsapp: "905321234567",            // ← + ve boşluk OLMADAN, ülke koduyla
 |---|
 | Üst menüdeki "Yer Ayır" butonu |
 | Hero'daki büyük WhatsApp butonu |
-| Her oda kartındaki "Bu Oda İçin Bilgi Al" (mesaja oda adı otomatik eklenir) |
 | Sağ alttaki yeşil sabit buton |
 | Mobildeki alt çubuk |
 | Kapanış bölümü ve footer |
@@ -42,12 +41,13 @@ Aynı şekilde `marka.ad` başlıkta, logoda, çekmecede, footer'da ve Google'a 
 
 ## Yayına almadan önce yapılacaklar
 
-- [ ] **Fotoğrafları değiştirin.** Şu an geçici örnek görseller (Unsplash) kullanılıyor. Gerçek fotoğrafları `assets/img/` klasörüne atıp `js/db.js`'te yolunu `"assets/img/oda-1.jpg"` şeklinde yazın.
+- [ ] **Fotoğraflar.** `assets/img/apart/` içindeki 17 fotoğraf apartın aparthouse.com.tr ilanından indirilmiştir. Elinizde daha yüksek çözünürlüklü orijinaller varsa aynı isimle üzerine yazın ya da yeni dosya adını `js/db.js`'te belirtin.
+- [ ] **`galeri.devam` listesindeki son fotoğrafta öğrencilerin yüzleri görünüyor.** Yayınlamadan önce ilgili kişilerin onayı olduğundan emin olun; olmayacaksa `js/db.js`'te o satırı silin.
 - [ ] **`index.html` içindeki hero ön-yükleme satırını güncelleyin.** `js/db.js > hero.gorseller[0].src` değiştirilirse, `index.html`'in `<head>` kısmındaki `<link rel="preload" as="image" ...>` adresi de elle değiştirilmelidir. (Ön yükleme `<head>`'de olmak zorunda olduğu için içerikten okunamıyor — `db.js` dışında elle güncellenmesi gereken tek yer budur.)
 - [ ] **İletişim bilgilerini gerçeğiyle değiştirin:** telefon, WhatsApp, e-posta, adres, harita adresi.
 - [ ] **`meta.site` ve `index.html`'deki `<link rel="canonical">` adresini** gerçek alan adınızla değiştirin.
 - [ ] **KVKK metnini** (`partials/kvkk.html`) kurumunuzun gerçek süreçlerine göre bir hukuk danışmanına uyarlatın.
-- [ ] **Fiyatları ve oda özelliklerini** güncelleyin.
+- [ ] **Fiyat bilgisi siteye eklenmedi** — kaynak ilanda yayınlanmadığı için uydurulmadı. Fiyat göstermek isterseniz `js/db.js`'e ekleyip `index.html`'e bir bölüm açmamı isteyin.
 - [ ] `js/db.js` değiştikten sonra `index.html`'in en altındaki `js/db.js?v=1` numarasını `?v=2` yapın. Bu, ziyaretçilerin tarayıcısında eski içeriğin takılı kalmasını engeller.
 
 ---
@@ -85,7 +85,7 @@ meltemapart/
 │   ├── tokens.css      Renk, yazı tipi, boşluk, gölge değerleri (genel görünüm)
 │   ├── base.css        Sıfırlama, tipografi, düzen yardımcıları
 │   ├── components.css  Buton, header, çekmece, sabit butonlar, modal
-│   └── sections.css    Hero, odalar, olanaklar, galeri, konum, yorumlar, S.S.S., footer
+│   └── sections.css    Hero, hakkımızda, olanaklar, galeri, konum, S.S.S., footer
 ├── js/
 │   ├── db.js           ★ TÜM İÇERİK — düzenlemeniz gereken tek dosya
 │   ├── render.js       db.js'i HTML'e yazan motor
@@ -93,7 +93,10 @@ meltemapart/
 ├── partials/
 │   ├── kvkk.html       Aydınlatma metni (htmx ile modala yüklenir)
 │   └── galeri-devami.html  Ek fotoğraflar (istenince yüklenir)
-└── assets/img/         Logo, favicon, yedek görsel — kendi fotoğraflarınız da buraya
+└── assets/img/
+    ├── favicon.svg     Sekme ikonu
+    ├── placeholder.svg Fotoğraf yüklenemezse gösterilen yedek
+    └── apart/          Apartın fotoğrafları (17 adet)
 ```
 
 ### Sitenin renklerini değiştirmek
@@ -109,7 +112,7 @@ tüm site (butonlar, ikonlar, gölgeler dahil) otomatik uyum sağlar.
 
 | Kütüphane | Görevi |
 |---|---|
-| [Swiper 11](https://swiperjs.com/) | Hero slider ve yorum karuseli |
+| [Swiper 11](https://swiperjs.com/) | Hero fotoğraf slider'ı |
 | [GLightbox 3](https://biati-digital.github.io/glightbox/) | Galeri fotoğraflarını büyütme |
 | [htmx 2](https://htmx.org/) | Galeri devamı ve KVKK metnini istenince yükleme |
 | Plus Jakarta Sans | Yazı tipi (Google Fonts) |
@@ -120,13 +123,30 @@ de çalışır). WhatsApp / Instagram / Facebook ikonları [Simple Icons](https:
 kaynaklıdır — Lucide'da WhatsApp ikonu bulunmuyor.
 
 **Dayanıklılık.** Site, dört CDN'in tamamı engellense bile kullanılabilir kalır: telefon, WhatsApp,
-fiyatlar, odalar ve adres okunabilir; slider tek fotoğrafta durur, galeri fotoğrafları yeni sekmede
+adres ve tüm bilgiler okunabilir; slider tek fotoğrafta durur, galeri fotoğrafları yeni sekmede
 açılır. `js/db.js` bozulursa sayfa `index.html`'deki hazır metinlerle ayakta kalır.
 
 **Harita** ziyaretçi "Haritayı Göster" butonuna basana kadar yüklenmez; böylece Google Maps çerezleri
 ve ~600 KB'lık yük ilk açılışta gelmez.
 
 **Arama motorları.** Başlık, açıklama, Open Graph etiketleri ve bölüm metinleri `index.html` içinde
-hazır durur (`db.js` bunları yalnızca günceller). Odalar, olanaklar, galeri ve S.S.S. gibi liste
+hazır durur (`db.js` bunları yalnızca günceller). Olanaklar, galeri ve S.S.S. gibi liste
 içerikleri ise `db.js`'ten JavaScript ile basılır — Google bunları render ederek görür, ancak
 JavaScript çalıştırmayan basit tarayıcılar/botlar yalnızca metin bölümlerini okur.
+
+
+---
+
+## İçerik kaynağı
+
+Sitedeki metinler, mesafeler, hizmet listesi ve fotoğraflar apartın
+[aparthouse.com.tr ilanından](https://aparthouse.com.tr/meltempark-kiz-apart/) alınmıştır.
+
+İlanda **fiyat**, **oda tipi**, **e-posta adresi** ve **sosyal medya hesabı** bilgisi
+yayınlanmadığı için bunlar siteye uydurma değerlerle eklenmemiştir. `js/db.js` içinde
+`iletisim.eposta` ve `sosyal` alanları boş bırakılmıştır; doldurduğunuz anda ilgili satırlar
+sayfada kendiliğinden görünür hale gelir.
+
+Aynı sebeple "müşteri yorumları" bölümü yoktur — ilanda hiç yorum bulunmuyor. Onun yerine
+apartın kendi yayınladığı veli mesajı "Bir Eğitimciden Velilere Not" bölümünde yer alıyor.
+Gerçek öğrenci/veli yorumlarınız olursa ekleyebiliriz.
