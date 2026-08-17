@@ -23,9 +23,21 @@ window.SITE = {
 
   /* ─── Arama motoru / paylaşım bilgileri ──────────────────────────────── */
   meta: {
-    baslik: "Meltempark Kız Apart | Eskişehir Tepebaşı Öğrenci Apartı",
-    aciklama: "Anadolu Üniversitesi'ne 13 dakika yürüme mesafesinde, çeyrek asırdır eğitimci bir aile tarafından işletilen kız öğrenci apartı. Kendi mutfağımızdan dört çeşit ev yemeği, parmak izli giriş, 7/24 kamera. Elektrik, su, doğalgaz ve sınırsız internet dahil.",
+    // Google sonuç sayfasında görünen mavi başlık.
+    // 60 KARAKTERİ GEÇMEYİN — geçen kısım "..." ile kesilir.
+    baslik: "Meltempark Kız Apart | Eskişehir Kız Öğrenci Apartı",
+
+    // Başlığın altındaki gri açıklama. 155 KARAKTER civarında tutun.
+    // İnsana yazın: aradığı şeyi bulduğunu anlamalı ve tıklamak istemeli.
+    aciklama: "Eskişehir Tepebaşı'nda, Anadolu Üniversitesi'ne 13 dakika yürüme mesafesinde kız öğrenci apartı. Dört çeşit ev yemeği, parmak izli giriş, 7/24 kamera, faturalar dahil.",
+
+    // WhatsApp / Facebook'ta link paylaşılınca çıkan kapak fotoğrafı
     ogGorsel: "assets/img/apart/1.jpg",
+    ogGorselAlt: "Meltempark Kız Apart binası dış görünüm",
+
+    // ⚠ SİTENİN GERÇEK ADRESİ. Sonunda / OLMASIN.
+    // Burayı değiştirirseniz index.html'deki canonical/og:url/hreflang satırları,
+    // robots.txt ve sitemap.xml de aynı adrese güncellenmelidir.
     site: "https://meltemparkkizapart.com"
   },
 
@@ -37,7 +49,10 @@ window.SITE = {
     // (assets/logo.png orijinal boyut; assets/img/logo.png web için küçültülmüş hali)
     logo: "assets/img/logo.png",
     slogan: "Çeyrek asırdır eğitimci bir ailenin emanetindesiniz.",
-    kurulusYili: "25+"
+    kurulusYili: "25+",
+
+    // Google'a gönderilen yapısal veride "kaç daire" bilgisi olarak bildirilir.
+    daireSayisi: 20
   },
 
   /* ─── İletişim ───────────────────────────────────────────────────────── */
@@ -50,6 +65,21 @@ window.SITE = {
     adres: "Bahçelievler Mah. Namık Kemal Sokak, 26170 Tepebaşı / ESKİŞEHİR",
     adresKisa: "Tepebaşı / Eskişehir",
     calismaSaati: "Fiyat ve müsaitlik için gün içinde telefonla ulaşabilirsiniz",
+
+    /* Adresin PARÇALANMIŞ hali — sadece Google'a gönderilir, sayfada görünmez.
+       Yukarıdaki tek satırlık "adres" insanlar için, aşağısı arama motoru için.
+       Google yerel sonuçlarda ve harita kartında bu parçaları okur. */
+    sokak: "Bahçelievler Mah. Namık Kemal Sokak",
+    ilce: "Tepebaşı",
+    il: "Eskişehir",
+    postaKodu: "26170",
+    ulkeKodu: "TR",                          // Türkiye
+
+    /* Apartın koordinatları. Google Haritalar'da apartın üzerine sağ tıklayıp
+       çıkan ilk satıra (41.0082, 28.9784 gibi) tıklayarak kopyalayabilirsiniz.
+       ⚠ Değiştirirseniz aşağıdaki iki harita adresindeki sayıları da güncelleyin. */
+    enlem: 39.788986,
+    boylam: 30.514682,
 
     // "Yol tarifi al" butonunun açtığı adres (apartın gerçek koordinatları)
     haritaUrl: "https://www.google.com/maps/search/?api=1&query=39.788986,30.514682",

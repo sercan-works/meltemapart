@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Site haritası — Google'a "sitede hangi sayfalar ve hangi fotoğraflar var"
+  bilgisini verir. Site tek sayfa olduğu için tek <url> kaydı vardır;
+  fotoğraflar Google Görseller'de çıkabilsin diye tek tek listelenmiştir.
+
+  ⚠ Alan adı değişirse aşağıdaki bütün adresleri değiştirin.
+  ⚠ Sitede kapsamlı bir değişiklik yaptığınızda <lastmod> tarihini
+    güncelleyin (YYYY-AA-GG biçiminde).
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://meltemparkkizapart.com/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/1.jpg</image:loc>
+      <image:title>Meltempark Kız Apart binası dış görünüm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-19.jpg</image:loc>
+      <image:title>Tek kişilik yatak ve çalışma masası</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-31.jpg</image:loc>
+      <image:title>Ortak yemek salonu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-23.jpg</image:loc>
+      <image:title>Daire mutfağı ve giriş kapısı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/2.jpg</image:loc>
+      <image:title>Gardırop, çalışma masası ve yatak</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-15.jpg</image:loc>
+      <image:title>Daire banyosu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-16.jpg</image:loc>
+      <image:title>Mutfakta ocak, buzdolabı ve yemek masası</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-27.jpg</image:loc>
+      <image:title>Aydınlık öğrenci odası</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-14.jpg</image:loc>
+      <image:title>Daire içi koridor</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-12.jpg</image:loc>
+      <image:title>Yatak ve dolap</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-13.jpg</image:loc>
+      <image:title>Çalışma masası ve raflar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-21.jpg</image:loc>
+      <image:title>Pencere kenarında yatak</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-22.jpg</image:loc>
+      <image:title>Oda detayı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-25.jpg</image:loc>
+      <image:title>Mutfak tezgâhı ve buzdolabı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-26.jpg</image:loc>
+      <image:title>Mutfakta ocak ve tezgâh</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meltemparkkizapart.com/assets/img/apart/foto-30.jpg</image:loc>
+      <image:title>Oda ve çalışma alanı</image:title>
+    </image:image>
+  </url>
+
+</urlset>

@@ -202,10 +202,40 @@
       (VERI.footer.telif || (VERI.marka && VERI.marka.ad) || '');
   }
 
+  /* ═══ SEO yardımcıları ═════════════════════════════════════════════════ */
+
+  /* Sitenin kök adresi, sonunda / OLMADAN.  "https://ornek.com" */
+  function kok() {
+    return String(get(VERI, 'meta.site') || '').replace(/\/+$/, '');
+  }
+
+  /* Göreli yolu mutlak adrese çevirir:
+       "assets/img/1.jpg"  →  "https://ornek.com/assets/img/1.jpg"
+     Arama motorları ve sosyal medya göreli yolu çözemez; og:image, canonical
+     ve yapısal verideki BÜTÜN adresler mutlak olmak zorundadır. */
+  function mutlak(yol) {
+    if (!yol) return '';
+    yol = String(yol);
+    if (/^https?:\/\//i.test(yol)) return yol;           // zaten mutlak
+    var k = kok();
+    if (!k) return yol;                                   // site adresi girilmemiş
+    return k + '/' + yol.replace(/^\/+/, '');
+  }
+
+  /* Sayfanın kanonik adresi — sonunda / İLE. Google için
+     "https://ornek.com" ve "https://ornek.com/" farklı adreslerdir;
+     canonical ile og:url'in birebir aynı yazılması gerekir. */
+  function kanonik() {
+    var k = kok();
+    return k ? k + '/' : '';
+  }
+
   /* ── <head> içindeki meta etiketleri ────────────────────────────────── */
   function metaYaz() {
     if (!VERI || !VERI.meta) return;
     var m = VERI.meta;
+    var gorsel = mutlak(m.ogGorsel);
+    var adres = kanonik();
 
     if (m.baslik) d.title = m.baslik;
 
@@ -214,40 +244,143 @@
       var el = d.querySelector(secici);
       if (el) el.setAttribute('content', deger);
     }
+    function baglanti(secici, deger) {
+      if (!deger) return;
+      var el = d.querySelector(secici);
+      if (el) el.setAttribute('href', deger);
+    }
+
     ayarla('meta[name="description"]', m.aciklama);
+
     ayarla('meta[property="og:title"]', m.baslik);
     ayarla('meta[property="og:description"]', m.aciklama);
-    ayarla('meta[property="og:image"]', m.ogGorsel);
-    ayarla('meta[property="og:url"]', m.site);
+    ayarla('meta[property="og:image"]', gorsel);
+    ayarla('meta[property="og:image:alt"]', m.ogGorselAlt);
+    ayarla('meta[property="og:url"]', adres);
+    ayarla('meta[property="og:site_name"]', get(VERI, 'marka.ad'));
+
     ayarla('meta[name="twitter:title"]', m.baslik);
     ayarla('meta[name="twitter:description"]', m.aciklama);
-    ayarla('meta[name="twitter:image"]', m.ogGorsel);
+    ayarla('meta[name="twitter:image"]', gorsel);
+    ayarla('meta[name="twitter:image:alt"]', m.ogGorselAlt);
+
+    /* Kanonik adres + dil bildirimi — aynı içeriğin farklı adreslerde
+       (www'lu / www'suz, http / https) çift görünmesini engeller. */
+    baglanti('link[rel="canonical"]', adres);
+    baglanti('link[hreflang="tr"]', adres);
+    baglanti('link[hreflang="x-default"]', adres);
+
+    /* Konum sinyalleri — koordinatlar db.js'ten okunur */
+    var ilt = VERI.iletisim || {};
+    if (isFinite(ilt.enlem) && isFinite(ilt.boylam)) {
+      ayarla('meta[name="geo.position"]', ilt.enlem + ';' + ilt.boylam);
+      ayarla('meta[name="ICBM"]', ilt.enlem + ', ' + ilt.boylam);
+    }
+    if (ilt.ilce || ilt.il) {
+      ayarla('meta[name="geo.placename"]',
+             [ilt.ilce, ilt.il].filter(Boolean).join(', '));
+    }
   }
 
-  /* ── Google için yapısal veri ───────────────────────────────────────── */
+  /* ── Google için yapısal veri (schema.org / JSON-LD) ─────────────────
+     index.html'de bu verinin STATİK bir kopyası hazır durur; aşağıdaki kod
+     o etiketin içeriğini db.js'teki güncel bilgilerle yeniden yazar.
+     Yeni etiket EKLEMEZ — iki farklı yapısal veri bloğu Google'ı şaşırtır.
+
+     Üretilen bloklar:
+       WebSite      → site kimliği
+       WebPage      → bu sayfa
+       ImageObject  → sayfanın ana görseli
+       LodgingBusiness → işletme kartı (adres, telefon, konum, olanaklar)
+       FAQPage      → S.S.S. bölümündeki soru-cevaplar
+     ──────────────────────────────────────────────────────────────────── */
   function jsonLd() {
     if (!VERI) return;
-    var ilt = VERI.iletisim || {};
-    var veri = {
-      '@context': 'https://schema.org',
+
+    var ilt   = VERI.iletisim || {};
+    var marka = VERI.marka || {};
+    var m     = VERI.meta || {};
+    var adres = kanonik();
+
+    /* Boş alanları (girilmemiş e-posta, sosyal hesap…) nesneden temizler —
+       schema.org'a boş değer göndermek uyarı üretir. */
+    function temizle(nesne) {
+      Object.keys(nesne).forEach(function (anahtar) {
+        var d2 = nesne[anahtar];
+        if (d2 === undefined || d2 === null || d2 === '' ||
+            (Array.isArray(d2) && d2.length === 0)) delete nesne[anahtar];
+      });
+      return nesne;
+    }
+
+    var kimlikIsletme = adres + '#isletme';
+    var kimlikGorsel  = adres + '#anagorsel';
+
+    /* ── Görseller: kapak fotoğrafı + galeri (Google Görseller için) ──── */
+    var gorseller = [];
+    if (m.ogGorsel) gorseller.push(mutlak(m.ogGorsel));
+    (get(VERI, 'galeri.liste') || []).forEach(function (g) {
+      var u = mutlak(g.src);
+      if (u && gorseller.indexOf(u) === -1) gorseller.push(u);
+    });
+
+    /* ── İşletme kartı ────────────────────────────────────────────────── */
+    var isletme = temizle({
       '@type': 'LodgingBusiness',
-      name: (VERI.marka || {}).ad,
-      description: (VERI.meta || {}).aciklama,
-      image: (VERI.meta || {}).ogGorsel,
-      url: (VERI.meta || {}).site,
-      telephone: ilt.telefonHam,
+      '@id': kimlikIsletme,
+      name: marka.ad,
+      alternateName: marka.kisaAd,
+      description: m.aciklama,
+      slogan: marka.slogan,
+      url: adres,
+      image: gorseller,
+      logo: mutlak(marka.logo),
+      telephone: ilt.telefonHam || ilt.telefon,
       email: ilt.eposta,
-      address: { '@type': 'PostalAddress', streetAddress: ilt.adres, addressCountry: 'TR' },
-      openingHours: 'Mo-Su 09:00-21:00',
+      address: temizle({
+        '@type': 'PostalAddress',
+        streetAddress: ilt.sokak || ilt.adres,
+        addressLocality: ilt.ilce,
+        addressRegion: ilt.il,
+        postalCode: ilt.postaKodu,
+        addressCountry: ilt.ulkeKodu || 'TR'
+      }),
+      hasMap: ilt.haritaUrl,
+      areaServed: ilt.il ? { '@type': 'City', name: ilt.il } : undefined,
+      knowsLanguage: 'tr',
+      currenciesAccepted: 'TRY',
+      numberOfRooms: marka.daireSayisi,
+      petsAllowed: false,
+      smokingAllowed: false,
+      audience: { '@type': 'Audience', audienceType: 'Kız üniversite öğrencileri' },
+      openingHoursSpecification: [{
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                    'Friday', 'Saturday', 'Sunday'],
+        opens: '09:00',
+        closes: '21:00'
+      }],
       amenityFeature: (get(VERI, 'olanaklar.liste') || []).map(function (o) {
         return { '@type': 'LocationFeatureSpecification', name: o.baslik, value: true };
-      })
-    };
+      }),
+      sameAs: (VERI.sosyal || []).map(function (s) { return s.url; }).filter(Boolean)
+    });
 
+    /* Koordinatlar — Google Haritalar eşleştirmesi için en güçlü sinyal */
+    if (isFinite(ilt.enlem) && isFinite(ilt.boylam)) {
+      isletme.geo = {
+        '@type': 'GeoCoordinates',
+        latitude: Number(ilt.enlem),
+        longitude: Number(ilt.boylam)
+      };
+    }
+
+    /* Puan bilgisi YALNIZCA gerçek yorum varsa yazılır.
+       Uydurma puan Google'ın manuel yaptırım sebebidir. */
     var yorumlar = get(VERI, 'yorumlar.liste') || [];
     if (yorumlar.length) {
       var toplam = yorumlar.reduce(function (t, y) { return t + (Number(y.puan) || 0); }, 0);
-      veri.aggregateRating = {
+      isletme.aggregateRating = {
         '@type': 'AggregateRating',
         ratingValue: (toplam / yorumlar.length).toFixed(1),
         reviewCount: yorumlar.length,
@@ -255,10 +388,65 @@
       };
     }
 
-    var etiket = d.createElement('script');
-    etiket.type = 'application/ld+json';
-    etiket.textContent = JSON.stringify(veri);
-    d.head.appendChild(etiket);
+    var graf = [
+      temizle({
+        '@type': 'WebSite',
+        '@id': adres + '#website',
+        url: adres,
+        name: marka.ad,
+        inLanguage: 'tr-TR',
+        publisher: { '@id': kimlikIsletme }
+      }),
+      temizle({
+        '@type': 'WebPage',
+        '@id': adres + '#sayfa',
+        url: adres,
+        name: m.baslik,
+        description: m.aciklama,
+        inLanguage: 'tr-TR',
+        isPartOf: { '@id': adres + '#website' },
+        about: { '@id': kimlikIsletme },
+        primaryImageOfPage: { '@id': kimlikGorsel }
+      }),
+      temizle({
+        '@type': 'ImageObject',
+        '@id': kimlikGorsel,
+        url: mutlak(m.ogGorsel),
+        contentUrl: mutlak(m.ogGorsel),
+        caption: m.ogGorselAlt
+      }),
+      isletme
+    ];
+
+    /* ── S.S.S. — sorular sayfada görünür olduğu için işaretlenebilir ─── */
+    var sorular = get(VERI, 'sss.liste') || [];
+    if (sorular.length) {
+      graf.push({
+        '@type': 'FAQPage',
+        '@id': adres + '#sss',
+        inLanguage: 'tr-TR',
+        isPartOf: { '@id': adres + '#sayfa' },
+        mainEntity: sorular.map(function (s) {
+          return {
+            '@type': 'Question',
+            name: s.soru,
+            acceptedAnswer: { '@type': 'Answer', text: s.cevap }
+          };
+        })
+      });
+    }
+
+    var icerik = JSON.stringify({ '@context': 'https://schema.org', '@graph': graf });
+
+    /* index.html'deki hazır etiketi güncelle; yoksa oluştur. */
+    var etiket = d.getElementById('yapisal-veri');
+    if (!etiket) {
+      etiket = d.createElement('script');
+      etiket.type = 'application/ld+json';
+      etiket.id = 'yapisal-veri';
+      d.head.appendChild(etiket);
+    }
+    etiket.textContent = icerik;
   }
 
   /* ── Çalıştır ───────────────────────────────────────────────────────── */

@@ -127,9 +127,15 @@
   font-weight: var(--fw-kalin);
   letter-spacing: .06em;
 }
-.hero-slayt__yazi h2 {
+/* Slayt açıklaması. Görsel olarak başlık gibi durur ama <p>'dir:
+   arama motorlarının okuduğu başlık yapısında sayfanın tek H1'i altında
+   yalnızca gerçek bölüm başlıkları (H2) kalsın diye. */
+.hero-slayt__baslik {
   margin-top: 12px;
   font-size: 1.75rem;
+  font-weight: var(--fw-siyah);
+  line-height: 1.18;
+  letter-spacing: -.02em;
   color: #fff;
 }
 
@@ -192,7 +198,7 @@
   .hero-slayt { height: 100%; }
   .hero-slayt__gorsel { height: 100%; min-height: 0; aspect-ratio: auto; }
   .hero-slayt__yazi { left: 20px; right: 20px; bottom: 42px; }
-  .hero-slayt__yazi h2 { font-size: 1.25rem; }
+  .hero-slayt__baslik { font-size: 1.25rem; }
   .hero-swiper__sayfalama { left: 20px; bottom: 16px; }
   .hero-swiper__oklar { display: none; }
 }

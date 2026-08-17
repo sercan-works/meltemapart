@@ -5,29 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Bu etiketler js/db.js > meta bölümünden otomatik güncellenir.
-     Buradaki değerler JS çalışmazsa / arama motoru botları için yedektir. -->
-<title>Meltempark Kız Apart | Eskişehir Tepebaşı Öğrenci Apartı</title>
-<meta name="description" content="Anadolu Üniversitesi'ne 13 dakika yürüme mesafesinde, çeyrek asırdır eğitimci bir aile tarafından işletilen kız öğrenci apartı. Dört çeşit ev yemeği, parmak izli giriş, 7/24 kamera. Elektrik, su, doğalgaz ve sınırsız internet dahil.">
+     Buradaki değerler JS çalışmazsa / arama motoru botları için yedektir.
+     ⚠ Alan adı değişirse: buradaki canonical + og:url + hreflang satırları,
+       js/db.js > meta.site, robots.txt ve sitemap.xml birlikte güncellenmelidir. -->
+<title>Meltempark Kız Apart | Eskişehir Kız Öğrenci Apartı</title>
+<meta name="description" content="Eskişehir Tepebaşı'nda, Anadolu Üniversitesi'ne 13 dakika yürüme mesafesinde kız öğrenci apartı. Dört çeşit ev yemeği, parmak izli giriş, 7/24 kamera, faturalar dahil.">
+
+<!-- Google'a: sayfayı dizine al, büyük görsel önizlemesine ve tam uzunlukta
+     snippet'e izin ver (varsayılan davranışın açıkça yazılmış hali). -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#B5838D">
 <link rel="canonical" href="https://meltemparkkizapart.com/">
+<link rel="alternate" hreflang="tr" href="https://meltemparkkizapart.com/">
+<link rel="alternate" hreflang="x-default" href="https://meltemparkkizapart.com/">
 
+<!-- Yerel arama (Google Haritalar / "yakınımdaki") için konum sinyalleri -->
+<meta name="geo.region" content="TR-26">
+<meta name="geo.placename" content="Tepebaşı, Eskişehir">
+<meta name="geo.position" content="39.788986;30.514682">
+<meta name="ICBM" content="39.788986, 30.514682">
+
+<!-- Sosyal medya paylaşımı — görsel adresleri MUTLAK olmak zorundadır,
+     Facebook/WhatsApp/X göreli yolu ("assets/...") çözemez. -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:site_name" content="Meltempark Kız Apart">
-<meta property="og:title" content="Meltempark Kız Apart | Eskişehir Tepebaşı Öğrenci Apartı">
-<meta property="og:description" content="Anadolu Üniversitesi'ne 13 dakika. Dört çeşit ev yemeği, parmak izli giriş, 7/24 kamera sistemi.">
-<meta property="og:image" content="assets/img/apart/1.jpg">
+<meta property="og:title" content="Meltempark Kız Apart | Eskişehir Kız Öğrenci Apartı">
+<meta property="og:description" content="Eskişehir Tepebaşı'nda, Anadolu Üniversitesi'ne 13 dakika yürüme mesafesinde kız öğrenci apartı. Dört çeşit ev yemeği, parmak izli giriş, faturalar dahil.">
+<meta property="og:image" content="https://meltemparkkizapart.com/assets/img/apart/1.jpg">
+<meta property="og:image:alt" content="Meltempark Kız Apart binası dış görünüm">
 <meta property="og:url" content="https://meltemparkkizapart.com/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Meltempark Kız Apart">
-<meta name="twitter:description" content="Eskişehir Tepebaşı'nda kız öğrenci apartı.">
-<meta name="twitter:image" content="assets/img/apart/1.jpg">
+<meta name="twitter:title" content="Meltempark Kız Apart | Eskişehir Kız Öğrenci Apartı">
+<meta name="twitter:description" content="Anadolu Üniversitesi'ne 13 dk. Ev yemeği, parmak izli giriş, 7/24 kamera.">
+<meta name="twitter:image" content="https://meltemparkkizapart.com/assets/img/apart/1.jpg">
+<meta name="twitter:image:alt" content="Meltempark Kız Apart binası dış görünüm">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <!-- ⚠ Hero'nun İLK fotoğrafı. db.js > hero.gorseller[0].src değiştirilirse
@@ -46,6 +65,88 @@
 <noscript><style>
   .acilim { opacity: 1 !important; filter: none !important; transform: none !important; }
 </style></noscript>
+
+<!-- ═══ GOOGLE YAPISAL VERİSİ (schema.org) ═════════════════════════════════
+     Google'a "burası bir konaklama işletmesi, adresi şu, telefonu bu" diye
+     makine diliyle anlatır. Bilgi kutusu ve zengin sonuçlar bunu okur.
+
+     Aşağıdaki blok JS çalışmasa bile geçerli kalsın diye STATİK yazılmıştır.
+     js/render.js sayfa açılınca bu etiketin içeriğini db.js'teki güncel
+     bilgilerle (olanaklar, S.S.S., galeri fotoğrafları dahil) YENİDEN yazar.
+     Dolayısıyla burayı elle güncellemeniz gerekmez — db.js yeter.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json" id="yapisal-veri">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://meltemparkkizapart.com/#website",
+      "url": "https://meltemparkkizapart.com/",
+      "name": "Meltempark Kız Apart",
+      "inLanguage": "tr-TR",
+      "publisher": { "@id": "https://meltemparkkizapart.com/#isletme" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://meltemparkkizapart.com/#sayfa",
+      "url": "https://meltemparkkizapart.com/",
+      "name": "Meltempark Kız Apart | Eskişehir Kız Öğrenci Apartı",
+      "description": "Eskişehir Tepebaşı'nda, Anadolu Üniversitesi'ne 13 dakika yürüme mesafesinde kız öğrenci apartı.",
+      "inLanguage": "tr-TR",
+      "isPartOf": { "@id": "https://meltemparkkizapart.com/#website" },
+      "about": { "@id": "https://meltemparkkizapart.com/#isletme" },
+      "primaryImageOfPage": { "@id": "https://meltemparkkizapart.com/#anagorsel" }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://meltemparkkizapart.com/#anagorsel",
+      "url": "https://meltemparkkizapart.com/assets/img/apart/1.jpg",
+      "contentUrl": "https://meltemparkkizapart.com/assets/img/apart/1.jpg",
+      "caption": "Meltempark Kız Apart binası dış görünüm"
+    },
+    {
+      "@type": "LodgingBusiness",
+      "@id": "https://meltemparkkizapart.com/#isletme",
+      "name": "Meltempark Kız Apart",
+      "alternateName": "Meltempark",
+      "description": "Eskişehir Tepebaşı'nda, çeyrek asırdır eğitimci bir aile tarafından işletilen kız öğrenci apartı. Anadolu Üniversitesi'ne 13 dakika yürüme mesafesinde.",
+      "url": "https://meltemparkkizapart.com/",
+      "image": { "@id": "https://meltemparkkizapart.com/#anagorsel" },
+      "logo": "https://meltemparkkizapart.com/assets/img/logo.png",
+      "telephone": "+905322773801",
+      "priceRange": "₺₺",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bahçelievler Mah. Namık Kemal Sokak",
+        "addressLocality": "Tepebaşı",
+        "addressRegion": "Eskişehir",
+        "postalCode": "26170",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.788986,
+        "longitude": 30.514682
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=39.788986,30.514682",
+      "areaServed": { "@type": "City", "name": "Eskişehir" },
+      "knowsLanguage": "tr",
+      "currenciesAccepted": "TRY",
+      "numberOfRooms": 20,
+      "petsAllowed": false,
+      "smokingAllowed": false,
+      "audience": { "@type": "Audience", "audienceType": "Kız üniversite öğrencileri" },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }]
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -230,8 +331,8 @@
                  alt="Meltempark Kız Apart binası dış görünüm">
             <div class="hero-slayt__perde"></div>
             <div class="hero-slayt__yazi">
-              <span>Arkadaşlarınla vakit geçir</span>
-              <h2>Ortak Yaşam Alanı</h2>
+              <span>Gürültüden uzak, üniversiteye yakın</span>
+              <p class="hero-slayt__baslik">Sakin Bir Sokakta</p>
             </div>
           </div>
         </div>
@@ -634,7 +735,7 @@
     <div class="hero-slayt__perde"></div>
     <div class="hero-slayt__yazi">
       <span data-db="altBaslik"></span>
-      <h2 data-db="baslik"></h2>
+      <p class="hero-slayt__baslik" data-db="baslik"></p>
     </div>
   </div>
 </template>
@@ -705,8 +806,8 @@
 
 <!-- ?v= sonundaki numarayı, db.js'i değiştirdikten sonra yayınlarken artırın.
      Böylece ziyaretçilerin tarayıcısı eski içeriği önbellekten göstermez. -->
-<script defer src="js/db.js?v=1"></script>
-<script defer src="js/render.js?v=1"></script>
+<script defer src="js/db.js?v=2"></script>
+<script defer src="js/render.js?v=2"></script>
 <script defer src="js/app.js?v=1"></script>
 
 </body>

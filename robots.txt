@@ -1,0 +1,18 @@
+# Arama motoru botlarına talimat dosyası.
+# Alan adı değişirse aşağıdaki Sitemap satırını güncellemeyi unutmayın.
+
+User-agent: *
+Allow: /
+
+# partials/ içindekiler tek başına bir sayfa değildir; index.html'in içine
+# enjekte edilen metin parçalarıdır. Google bunları ayrı ve içi boş birer
+# sayfa sanıp dizine almasın diye taranmalarını kapatıyoruz.
+# (Fotoğrafların Google Görseller'e girmesi bundan etkilenmez — hepsi
+#  sitemap.xml içinde ayrıca listelenmiştir.)
+Disallow: /partials/
+
+# Yedeğe alınmış yüksek çözünürlüklü orijinaller — sitede kullanılmıyor,
+# taranmasına gerek yok.
+Disallow: /assets/img/apart/orijinal/
+
+Sitemap: https://meltemparkkizapart.com/sitemap.xml
