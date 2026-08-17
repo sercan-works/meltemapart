@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#F5EDE9"/>
+  <g fill="none" stroke="#DFD0CC" stroke-width="2">
+    <path d="M0 0 800 600M800 0 0 600"/>
+  </g>
+  <g fill="none" stroke="#B5838D" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="320" y="240" width="160" height="120" rx="12"/>
+    <circle cx="365" cy="285" r="14"/>
+    <path d="M320 330l50-45 40 35 30-25 40 35"/>
+  </g>
+  <text x="400" y="420" text-anchor="middle"
+        font-family="Plus Jakarta Sans, Segoe UI, system-ui, sans-serif"
+        font-size="26" font-weight="700" fill="#7A6A6E">Fotoğraf yüklenemedi</text>
+</svg>

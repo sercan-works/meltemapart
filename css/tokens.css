@@ -1,0 +1,116 @@
+/* ═══════════════════════════════════════════════════════════════
+   MELTEM KIZ APART — TASARIM TOKENLERİ
+   Renk, tipografi, boşluk ve gölge değerleri sadece burada tanımlı.
+   Sitenin genel görünümünü değiştirmek için bu dosya yeterlidir.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Renkler ─────────────────────────────────────────────── */
+  --renk-ana: #B5838D;                       /* gül kurusu — vurgu, aktif durum */
+  --renk-ana-koyu: #6D4C57;                  /* mürdüm — koyu yüzeyler, footer */
+  --renk-ana-koyu-2: #4A3038;                /* en koyu ton — iletişim banner */
+  --renk-ana-acik: #E8B4B8;                  /* pudra — ikincil vurgu */
+  --renk-ana-05: rgba(181, 131, 141, .05);
+  --renk-ana-10: rgba(181, 131, 141, .10);   /* pill zemin */
+  --renk-ana-20: rgba(181, 131, 141, .20);   /* kenarlık */
+  --renk-ana-35: rgba(181, 131, 141, .35);
+
+  --renk-zemin: #FBF7F4;                     /* krem — bölüm zeminleri */
+  --renk-zemin-2: #F5EDE9;                   /* biraz daha doygun krem */
+  --renk-yuzey: #FFFFFF;
+  --renk-metin: #2B2124;
+  --renk-metin-2: #4A3D41;
+  --renk-muted: #7A6A6E;
+  --renk-cizgi: #EDE3E0;
+  --renk-cizgi-koyu: #DFD0CC;
+
+  --renk-wa: #25D366;
+  --renk-wa-koyu: #1EB455;
+  --renk-yildiz: #E8A33D;
+
+  /* Koyu yüzeyler üzerindeki katmanlar */
+  --koyu-dolgu: rgba(255, 255, 255, .06);
+  --koyu-cizgi: rgba(255, 255, 255, .12);
+  --koyu-metin: rgba(255, 255, 255, .68);
+  --koyu-metin-soluk: rgba(255, 255, 255, .45);
+
+  /* ── Tipografi ───────────────────────────────────────────── */
+  --font: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --fs-eyebrow: .8125rem;   /* 13px */
+  --fs-kucuk: .875rem;      /* 14px */
+  --fs-govde: 1rem;         /* 16px */
+  --fs-lede: 1.0625rem;     /* 17px */
+  --fs-h3: 1.25rem;         /* 20px */
+  --fs-h2: 2.75rem;         /* 44px */
+  --fs-h1: 3.25rem;         /* 52px */
+  --fs-sayi: 1.875rem;      /* 30px */
+
+  --fw-normal: 400;
+  --fw-orta: 600;
+  --fw-kalin: 700;
+  --fw-siyah: 800;
+
+  /* ── Yarıçap ─────────────────────────────────────────────── */
+  --yaricap-pill: 999px;
+  --yaricap-kart: 20px;
+  --yaricap-panel: 16px;
+  --yaricap-kucuk: 12px;
+  --yaricap-mini: 8px;
+
+  /* ── Gölge ───────────────────────────────────────────────── */
+  /* Nötr öğeler siyahın düşük alfası; renkli öğeler kendi tonu. */
+  --golge-yumusak: 0 1px 3px rgba(43, 33, 36, .04);
+  --golge-kart: 0 2px 10px rgba(43, 33, 36, .06);
+  --golge-kart-hover: 0 14px 36px rgba(109, 76, 87, .16);
+  --golge-panel: 0 10px 40px rgba(43, 33, 36, .10);
+  --golge-header: 0 4px 20px rgba(43, 33, 36, .08);
+  --golge-ana: 0 8px 22px rgba(181, 131, 141, .34);
+  --golge-ana-hover: 0 12px 28px rgba(181, 131, 141, .46);
+  --golge-wa: 0 8px 24px rgba(37, 211, 102, .38);
+  --golge-wa-hover: 0 10px 28px rgba(37, 211, 102, .50);
+
+  /* ── Ritim ───────────────────────────────────────────────── */
+  --bolum-padding: 120px;      /* mobilde 48px'e iner */
+  --baslik-bosluk: 80px;       /* başlık bloğu → içerik */
+  --kapsayici: 1240px;
+  --header-yukseklik: 88px;
+
+  /* ── Geçiş ───────────────────────────────────────────────── */
+  --gecis-hizli: .18s ease;
+  --gecis: .28s ease;
+  --gecis-yavas: .6s cubic-bezier(.4, 0, .2, 1);
+
+  /* ── Katman sırası ───────────────────────────────────────── */
+  --z-fab: 90;
+  --z-altbar: 95;
+  --z-header: 100;
+  --z-perde: 200;
+  --z-cekmece: 210;
+  --z-modal: 300;
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --fs-h1: 2.625rem;   /* 42px */
+    --fs-h2: 2.25rem;    /* 36px */
+  }
+}
+
+@media (max-width: 991px) {
+  :root {
+    --bolum-padding: 72px;
+    --baslik-bosluk: 44px;
+    --header-yukseklik: 64px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --bolum-padding: 48px;
+    --baslik-bosluk: 30px;
+    --fs-h1: 2.0625rem;  /* 33px */
+    --fs-h2: 1.75rem;    /* 28px */
+    --fs-sayi: 1.5rem;   /* 24px */
+  }
+}

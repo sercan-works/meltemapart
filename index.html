@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bu etiketler js/db.js > meta bölümünden otomatik güncellenir.
+     Buradaki değerler JS çalışmazsa / arama motoru botları için yedektir. -->
+<title>Meltem Kız Apart | Kayseri'de Güvenli Kız Öğrenci Apartı</title>
+<meta name="description" content="Erciyes Üniversitesi'ne 5 dakika. 7/24 güvenlik, kameralı sistem, kadın yönetici, ücretsiz fiber internet ve etüt odası. Tek ve iki kişilik odalar.">
+<meta name="theme-color" content="#B5838D">
+<link rel="canonical" href="https://meltemkizapart.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Meltem Kız Apart">
+<meta property="og:title" content="Meltem Kız Apart | Kayseri'de Güvenli Kız Öğrenci Apartı">
+<meta property="og:description" content="Erciyes Üniversitesi'ne 5 dakika. 7/24 güvenlik, kadın yönetici, etüt odası ve açık büfe kahvaltı.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80">
+<meta property="og:url" content="https://meltemkizapart.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meltem Kız Apart">
+<meta name="twitter:description" content="Kayseri'de güvenli kız öğrenci apartı.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ⚠ Hero'nun İLK fotoğrafı. db.js > hero.gorseller[0].src değiştirilirse
+     bu satırdaki adres de elle güncellenmelidir (preload <head>'de olmak zorunda). -->
+<link rel="preload" as="image" fetchpriority="high"
+      href="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1400&q=80">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+
+<!-- JavaScript kapalıysa kaydırma animasyonu hiç tetiklenmez ve kartlar
+     saydam kalırdı; bu durumda animasyonu tamamen devre dışı bırakıyoruz. -->
+<noscript><style>
+  .acilim { opacity: 1 !important; filter: none !important; transform: none !important; }
+</style></noscript>
+</head>
+
+<body>
+
+<a class="atlama" href="#icerik">İçeriğe atla</a>
+
+<!-- ═══ İKON SPRITE ═══════════════════════════════════════════════════════
+     Lucide 0.544 ikonları + marka ikonları (Simple Icons).
+     Kullanım: <svg class="ikon"><use href="#ikon-wifi"></use></svg>
+     Kütüphane yüklemiyoruz — 373 KB yerine ~7 KB ve CDN bağımlılığı yok.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="ikon-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="ikon-cctv" viewBox="0 0 24 24"><path d="M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97"/><path d="M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z"/><path d="M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15"/><path d="M2 21v-4"/><path d="M7 9h.01"/></symbol>
+<symbol id="ikon-user-round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+<symbol id="ikon-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+<symbol id="ikon-wifi" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></symbol>
+<symbol id="ikon-book-open" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+<symbol id="ikon-washing-machine" viewBox="0 0 24 24"><path d="M3 6h3"/><path d="M17 6h.01"/><rect width="18" height="20" x="3" y="2" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"/></symbol>
+<symbol id="ikon-chef-hat" viewBox="0 0 24 24"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></symbol>
+<symbol id="ikon-croissant" viewBox="0 0 24 24"><path d="M10.2 18H4.774a1.5 1.5 0 0 1-1.352-.97 11 11 0 0 1 .132-6.487"/><path d="M18 10.2V4.774a1.5 1.5 0 0 0-.97-1.352 11 11 0 0 0-6.486.132"/><path d="M18 5a4 3 0 0 1 4 3 2 2 0 0 1-2 2 10 10 0 0 0-5.139 1.42"/><path d="M5 18a3 4 0 0 0 3 4 2 2 0 0 0 2-2 10 10 0 0 1 1.42-5.14"/><path d="M8.709 2.554a10 10 0 0 0-6.155 6.155 1.5 1.5 0 0 0 .676 1.626l9.807 5.42a2 2 0 0 0 2.718-2.718l-5.42-9.807a1.5 1.5 0 0 0-1.626-.676"/></symbol>
+<symbol id="ikon-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></symbol>
+<symbol id="ikon-key-round" viewBox="0 0 24 24"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></symbol>
+<symbol id="ikon-snowflake" viewBox="0 0 24 24"><path d="m10 20-1.25-2.5L6 18"/><path d="M10 4 8.75 6.5 6 6"/><path d="m14 20 1.25-2.5L18 18"/><path d="m14 4 1.25 2.5L18 6"/><path d="m17 21-3-6h-4"/><path d="m17 3-3 6 1.5 3"/><path d="M2 12h6.5L10 9"/><path d="m20 10-1.5 2 1.5 2"/><path d="M22 12h-6.5L14 15"/><path d="m4 10 1.5 2L4 14"/><path d="m7 21 3-6-1.5-3"/><path d="m7 3 3 6h4"/></symbol>
+<symbol id="ikon-car-front" viewBox="0 0 24 24"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8"/><path d="M7 14h.01"/><path d="M17 14h.01"/><rect width="18" height="8" x="3" y="10" rx="2"/><path d="M5 18v2"/><path d="M19 18v2"/></symbol>
+<symbol id="ikon-bus-front" viewBox="0 0 24 24"><path d="M4 6 2 7"/><path d="M10 6h4"/><path d="m22 7-2-1"/><rect width="16" height="16" x="4" y="3" rx="2"/><path d="M4 11h16"/><path d="M8 15h.01"/><path d="M16 15h.01"/><path d="M6 19v2"/><path d="M18 21v-2"/></symbol>
+<symbol id="ikon-shopping-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+<symbol id="ikon-heart-pulse" viewBox="0 0 24 24"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
+<symbol id="ikon-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+<symbol id="ikon-landmark" viewBox="0 0 24 24"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></symbol>
+<symbol id="ikon-phone" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
+<symbol id="ikon-menu" viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol>
+<symbol id="ikon-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+<symbol id="ikon-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+<symbol id="ikon-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+<symbol id="ikon-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="ikon-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="ikon-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="ikon-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+<symbol id="ikon-quote" viewBox="0 0 24 24"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></symbol>
+<symbol id="ikon-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+<symbol id="ikon-navigation" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+<symbol id="ikon-bed-double" viewBox="0 0 24 24"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></symbol>
+<symbol id="ikon-ruler" viewBox="0 0 24 24"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></symbol>
+<symbol id="ikon-heart" viewBox="0 0 24 24"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></symbol>
+<!-- Marka ikonları — Simple Icons (Lucide'da WhatsApp yok) -->
+<symbol id="ikon-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.174.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.8 11.8 0 0 0-3.48-8.413"/></symbol>
+<symbol id="ikon-instagram" viewBox="0 0 24 24"><path d="M7.03.084c-1.277.06-2.148.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388 5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.797.064 7.074s-.069 1.688-.063 4.947.021 3.667.083 4.947c.061 1.277.264 2.148.563 2.91.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.634.496 2.911.552 1.277.056 1.688.069 4.946.063 3.258-.006 3.668-.02 4.948-.083 1.28-.063 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388 5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.634.551-2.909.056-1.28.07-1.689.063-4.948-.006-3.258-.02-3.667-.083-4.947-.062-1.28-.264-2.148-.563-2.911a5.9 5.9 0 0 0-1.387-2.123 5.9 5.9 0 0 0-2.128-1.38C19.074.322 18.203.12 16.926.066 15.65.009 15.239-.006 11.98 0 8.72.006 8.311.02 7.03.084m.14 21.693c-1.17-.05-1.805-.245-2.228-.408a3.7 3.7 0 0 1-1.382-.895 3.7 3.7 0 0 1-.9-1.378c-.165-.423-.363-1.058-.417-2.228-.06-1.264-.072-1.644-.08-4.848-.006-3.204.006-3.583.061-4.848.05-1.169.246-1.805.408-2.228.216-.561.477-.96.895-1.382a3.7 3.7 0 0 1 1.379-.9c.423-.165 1.057-.361 2.227-.417 1.265-.06 1.644-.072 4.848-.08 3.203-.006 3.583.006 4.85.062 1.168.05 1.804.244 2.227.408.56.216.96.475 1.382.895s.681.817.9 1.378c.165.422.362 1.056.417 2.227.06 1.265.074 1.645.08 4.848.005 3.203-.006 3.584-.061 4.848-.051 1.17-.245 1.805-.408 2.23-.216.56-.477.96-.896 1.38a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.418-1.266.06-1.645.072-4.85.079s-3.582-.006-4.848-.06m9.783-16.192a1.44 1.44 0 1 0 1.437-1.442 1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024 6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16 4 4 0 0 1 8 12.008"/></symbol>
+<symbol id="ikon-facebook" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.7 8.7 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></symbol>
+</defs></svg>
+
+
+<!-- ═══ HEADER ══════════════════════════════════════════════════════════ -->
+<header class="header" id="header">
+  <div class="kapsayici">
+    <div class="header__pill">
+
+      <a class="logo" href="#hero" aria-label="Meltem Kız Apart — sayfa başına dön">
+        <span class="logo__amblem" aria-hidden="true">
+          <svg class="ikon"><use href="#ikon-heart"></use></svg>
+        </span>
+        <span class="logo__yazi">
+          <strong data-db="marka.ad">Meltem Kız Apart</strong>
+          <small data-db="iletisim.adresKisa">Melikgazi / Kayseri</small>
+        </span>
+      </a>
+
+      <nav class="header__menu" aria-label="Ana menü">
+        <ul data-db-list="navigasyon" data-db-tpl="tpl-nav">
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#odalar">Odalarımız</a></li>
+          <li><a href="#olanaklar">Olanaklar</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#konum">Konum</a></li>
+          <li><a href="#sss">S.S.S.</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__aksiyon">
+        <a class="ikon-btn" href="tel:+903521234567" data-db-attr="href:iletisim.telLink"
+           aria-label="Telefonla ara">
+          <svg class="ikon"><use href="#ikon-phone"></use></svg>
+        </a>
+        <a class="btn btn--ana btn--kucuk sadece-masaustu" href="#" target="_blank" rel="noopener"
+           data-db-attr="href:iletisim.waLink">
+          <svg class="ikon ikon--marka"><use href="#ikon-whatsapp"></use></svg>
+          <span>Yer Ayır</span>
+        </a>
+        <button class="ikon-btn ikon-btn--hamburger" id="cekmece-ac"
+                aria-label="Menüyü aç" aria-expanded="false" aria-controls="cekmece">
+          <svg class="ikon"><use href="#ikon-menu"></use></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MOBİL ÇEKMECE ═══════════════════════════════════════════════════ -->
+<div class="perde" id="perde" hidden></div>
+
+<aside class="cekmece" id="cekmece" aria-label="Mobil menü" aria-hidden="true">
+  <div class="cekmece__ust">
+    <span class="cekmece__marka" data-db="marka.ad">Meltem Kız Apart</span>
+    <button class="ikon-btn" id="cekmece-kapat" aria-label="Menüyü kapat">
+      <svg class="ikon"><use href="#ikon-x"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Mobil ana menü">
+    <ul class="cekmece__menu" data-db-list="navigasyon" data-db-tpl="tpl-cekmece-nav">
+      <li><a href="#hakkimizda"><svg class="ikon"><use href="#ikon-arrow-right"></use></svg>Hakkımızda</a></li>
+      <li><a href="#odalar"><svg class="ikon"><use href="#ikon-arrow-right"></use></svg>Odalarımız</a></li>
+      <li><a href="#olanaklar"><svg class="ikon"><use href="#ikon-arrow-right"></use></svg>Olanaklar</a></li>
+      <li><a href="#galeri"><svg class="ikon"><use href="#ikon-arrow-right"></use></svg>Galeri</a></li>
+      <li><a href="#konum"><svg class="ikon"><use href="#ikon-arrow-right"></use></svg>Konum</a></li>
+      <li><a href="#sss"><svg class="ikon"><use href="#ikon-arrow-right"></use></svg>S.S.S.</a></li>
+    </ul>
+  </nav>
+
+  <div class="cekmece__iletisim">
+    <a href="#" target="_blank" rel="noopener" data-db-attr="href:iletisim.waLink">
+      <span class="cekmece__ikon cekmece__ikon--wa"><svg class="ikon ikon--marka"><use href="#ikon-whatsapp"></use></svg></span>
+      <span><small>WhatsApp</small><b>Hemen yazın</b></span>
+    </a>
+    <a href="tel:+903521234567" data-db-attr="href:iletisim.telLink">
+      <span class="cekmece__ikon"><svg class="ikon"><use href="#ikon-phone"></use></svg></span>
+      <span><small>Telefon</small><b data-db="iletisim.telefon">0 (352) 123 45 67</b></span>
+    </a>
+    <a href="#" target="_blank" rel="noopener" data-db-attr="href:iletisim.haritaUrl">
+      <span class="cekmece__ikon"><svg class="ikon"><use href="#ikon-map-pin"></use></svg></span>
+      <span><small>Adres</small><b data-db="iletisim.adresKisa">Melikgazi / Kayseri</b></span>
+    </a>
+  </div>
+
+  <ul class="sosyal" data-db-list="sosyal" data-db-tpl="tpl-sosyal"></ul>
+</aside>
+
+
+<main id="icerik">
+
+<!-- ═══ HERO ════════════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero__ic">
+
+    <div class="hero__metin">
+      <span class="eyebrow">
+        <svg class="ikon"><use href="#ikon-shield-check"></use></svg>
+        <span data-db="hero.eyebrow">2015'ten beri güvenli yuvanız</span>
+      </span>
+
+      <h1 class="hero__baslik" data-db-html="hero.baslik">Evinden Uzakta, <em>Kendini Evinde</em> Hisset</h1>
+
+      <p class="hero__lede" data-db="hero.metin">Erciyes Üniversitesi'ne yürüme mesafesinde, 7/24 güvenlikli, kadın yöneticili kız öğrenci apartı. Ders çalışacağın sessiz bir etüt odası, sıcak bir kahvaltı ve arkadaşlarınla paylaşacağın huzurlu bir ortam seni bekliyor.</p>
+
+      <div class="hero__sayilar" data-db-list="hero.istatistikler" data-db-tpl="tpl-istatistik">
+        <div class="sayi-kutu"><b>120</b><span>Öğrenci Kapasitesi</span></div>
+        <div class="sayi-kutu"><b>7/24</b><span>Güvenlik &amp; Kamera</span></div>
+        <div class="sayi-kutu"><b>5 dk</b><span>Kampüse Mesafe</span></div>
+      </div>
+
+      <div class="hero__butonlar">
+        <a class="btn btn--wa" href="#" target="_blank" rel="noopener" data-db-attr="href:iletisim.waLink">
+          <svg class="ikon ikon--marka"><use href="#ikon-whatsapp"></use></svg>
+          <span data-db="hero.butonAna">WhatsApp'tan Yer Ayır</span>
+        </a>
+        <a class="btn btn--hayalet" href="#odalar">
+          <span data-db="hero.butonIkincil">Odaları İncele</span>
+          <svg class="ikon"><use href="#ikon-arrow-right"></use></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__slider">
+      <div class="swiper hero-swiper">
+        <div class="swiper-wrapper" data-db-list="hero.gorseller" data-db-tpl="tpl-hero-slayt">
+          <div class="swiper-slide hero-slayt">
+            <img class="hero-slayt__gorsel" width="1400" height="1050" fetchpriority="high" decoding="async"
+                 src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1400&q=80"
+                 alt="Meltem Kız Apart ortak oturma salonu">
+            <div class="hero-slayt__perde"></div>
+            <div class="hero-slayt__yazi">
+              <span>Arkadaşlarınla vakit geçir</span>
+              <h2>Ortak Yaşam Alanı</h2>
+            </div>
+          </div>
+        </div>
+        <div class="hero-swiper__sayfalama"></div>
+        <div class="hero-swiper__oklar">
+          <button class="yuvarlak-btn" id="hero-onceki" aria-label="Önceki fotoğraf">
+            <svg class="ikon" style="transform:rotate(180deg)"><use href="#ikon-arrow-right"></use></svg>
+          </button>
+          <button class="yuvarlak-btn" id="hero-sonraki" aria-label="Sonraki fotoğraf">
+            <svg class="ikon"><use href="#ikon-arrow-right"></use></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ GÜVEN ŞERİDİ ════════════════════════════════════════════════════ -->
+<section class="guven" aria-label="Öne çıkan özellikler">
+  <div class="kapsayici">
+    <ul class="guven__liste" data-db-list="guvenRozetleri" data-db-tpl="tpl-guven">
+      <li><svg class="ikon"><use href="#ikon-shield-check"></use></svg><span>7/24 Güvenlik Görevlisi</span></li>
+      <li><svg class="ikon"><use href="#ikon-cctv"></use></svg><span>Kameralı Ortak Alanlar</span></li>
+      <li><svg class="ikon"><use href="#ikon-user-round"></use></svg><span>Kadın Yönetici</span></li>
+      <li><svg class="ikon"><use href="#ikon-graduation-cap"></use></svg><span>Kampüse 5 Dakika</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ HAKKIMIZDA ══════════════════════════════════════════════════════ -->
+<section class="bolum hakkimizda" id="hakkimizda">
+  <div class="kapsayici">
+    <div class="hakkimizda__ic">
+
+      <div class="hakkimizda__gorseller acilim">
+        <img class="hakkimizda__g1" width="900" height="700" loading="lazy" decoding="async"
+             src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=80"
+             alt="Apartın ortak oturma alanı"
+             data-db-attr="src:hakkimizda.gorsel1|alt:hakkimizda.gorsel1Alt">
+        <img class="hakkimizda__g2" width="700" height="800" loading="lazy" decoding="async"
+             src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=700&q=80"
+             alt="Öğrenci odasından bir kesit"
+             data-db-attr="src:hakkimizda.gorsel2|alt:hakkimizda.gorsel2Alt">
+        <span class="hakkimizda__rozet">
+          <b data-db="marka.kurulusYili">2015</b>
+          <small>yılından beri</small>
+        </span>
+      </div>
+
+      <div class="hakkimizda__metin acilim">
+        <span class="eyebrow"><span data-db="hakkimizda.eyebrow">Hakkımızda</span></span>
+        <h2 data-db-html="hakkimizda.baslik">Kızınız Burada <em>Ailesinin Yanında</em> Gibi</h2>
+
+        <div data-db-list="hakkimizda.paragraflar" data-db-tpl="tpl-paragraf">
+          <p>Meltem Kız Apart, 2015 yılından bu yana Kayseri'de okuyan üniversiteli kızlarımızı ağırlıyor. Bir apart işletmesinden çok, evinden ilk kez ayrılan bir gencin ikinci evi olmayı hedefliyoruz.</p>
+          <p>Girişte kartlı geçiş sistemi, ortak alanlarda kamera ve her gece nöbetçi görevlimiz var.</p>
+        </div>
+
+        <ul class="tik-liste" data-db-list="hakkimizda.maddeler" data-db-tpl="tpl-tik">
+          <li><svg class="ikon"><use href="#ikon-check"></use></svg><span>Velilerle düzenli bilgilendirme ve iletişim</span></li>
+          <li><svg class="ikon"><use href="#ikon-check"></use></svg><span>Haftalık oda temizliği, günlük ortak alan bakımı</span></li>
+          <li><svg class="ikon"><use href="#ikon-check"></use></svg><span>Her sabah açık büfe kahvaltı</span></li>
+        </ul>
+
+        <div class="imza">
+          <img width="120" height="120" loading="lazy" decoding="async"
+               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80"
+               alt="" data-db-attr="src:hakkimizda.imzaGorsel">
+          <div>
+            <b data-db="hakkimizda.imzaAd">Meltem Yıldırım</b>
+            <small data-db="hakkimizda.imzaUnvan">Apart Yöneticisi</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ODA TİPLERİ ═════════════════════════════════════════════════════ -->
+<section class="bolum bolum--krem" id="odalar">
+  <div class="kapsayici">
+    <div class="bolum-basligi">
+      <span class="eyebrow">
+        <svg class="ikon"><use href="#ikon-bed-double"></use></svg>
+        <span data-db="odalar.eyebrow">Konaklama</span>
+      </span>
+      <h2 data-db="odalar.baslik">Oda Tiplerimiz</h2>
+      <p class="lede" data-db="odalar.lede">Bütçenize ve alışkanlıklarınıza uygun üç farklı seçenek. Tüm odalarda özel banyo, çalışma masası ve klima standarttır.</p>
+    </div>
+
+    <div class="oda-grid" data-db-list="odalar.liste" data-db-tpl="tpl-oda"></div>
+
+    <p class="fiyat-notu">
+      <svg class="ikon"><use href="#ikon-check"></use></svg>
+      <span data-db="odalar.fiyatNotu">Fiyatlara kahvaltı, temizlik, internet, elektrik, su ve doğalgaz dahildir.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ═══ OLANAKLAR ═══════════════════════════════════════════════════════ -->
+<section class="bolum" id="olanaklar">
+  <div class="kapsayici">
+    <div class="bolum-basligi">
+      <span class="eyebrow">
+        <svg class="ikon"><use href="#ikon-sparkles"></use></svg>
+        <span data-db="olanaklar.eyebrow">Olanaklar</span>
+      </span>
+      <h2 data-db="olanaklar.baslik">Apartımızda Neler Var?</h2>
+      <p class="lede" data-db="olanaklar.lede">Ders çalışmaktan çamaşır yıkamaya, kahvaltıdan güvenliğe kadar günlük hayatını kolaylaştıracak her şey hazır.</p>
+    </div>
+
+    <div class="olanak-grid" data-db-list="olanaklar.liste" data-db-tpl="tpl-olanak"></div>
+  </div>
+</section>
+
+<!-- ═══ GALERİ ══════════════════════════════════════════════════════════ -->
+<section class="bolum bolum--krem" id="galeri">
+  <div class="kapsayici">
+    <div class="bolum-basligi">
+      <span class="eyebrow">
+        <svg class="ikon"><use href="#ikon-quote"></use></svg>
+        <span data-db="galeri.eyebrow">Galeri</span>
+      </span>
+      <h2 data-db="galeri.baslik">Apartımızdan Kareler</h2>
+      <p class="lede" data-db="galeri.lede">Fotoğrafa tıklayarak büyütebilirsiniz. Yerinde görmek isterseniz randevu alın, sizi gezdirelim.</p>
+    </div>
+
+    <div class="galeri-grid" id="galeri-grid" data-db-list="galeri.liste" data-db-tpl="tpl-galeri"></div>
+
+    <div id="galeri-devami"></div>
+
+    <div class="bolum__alt">
+      <!-- htmx: ek fotoğrafların <img> etiketleri istenene kadar DOM'a hiç girmez,
+           dolayısıyla dosyaları da indirilmez. İçerik yine db.js > galeri.devam'dan gelir.
+           file:// üzerinde bu buton gizlenir (js/app.js). -->
+      <button class="btn btn--koyu" id="galeri-daha"
+              hx-get="partials/galeri-devami.html"
+              hx-target="#galeri-devami"
+              hx-swap="innerHTML">
+        <span data-db="galeri.butonYazi">Daha Fazla Fotoğraf</span>
+        <svg class="ikon"><use href="#ikon-chevron-down"></use></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KONUM ═══════════════════════════════════════════════════════════ -->
+<section class="bolum" id="konum">
+  <div class="kapsayici">
+    <div class="konum__ic">
+
+      <div class="konum__metin">
+        <div class="bolum-basligi bolum-basligi--sol">
+          <span class="eyebrow">
+            <svg class="ikon"><use href="#ikon-map-pin"></use></svg>
+            <span data-db="konum.eyebrow">Konum</span>
+          </span>
+          <h2 data-db-html="konum.baslik">Her Yere Yakın, <em>Gürültüden Uzak</em></h2>
+          <p class="lede" data-db="konum.lede">Kampüse yürüme mesafesinde ama sakin bir sokakta. Market, eczane ve durak kapının önünde.</p>
+        </div>
+
+        <ul class="yakin-liste" data-db-list="konum.yakinlar" data-db-tpl="tpl-yakin"></ul>
+
+        <p class="konum__adres">
+          <svg class="ikon"><use href="#ikon-map-pin"></use></svg>
+          <span data-db="iletisim.adres">Köşk Mah. Üniversite Cad. No: 42, Melikgazi / KAYSERİ</span>
+        </p>
+
+        <a class="btn btn--ana" href="#" target="_blank" rel="noopener" data-db-attr="href:iletisim.haritaUrl">
+          <svg class="ikon"><use href="#ikon-navigation"></use></svg>
+          <span data-db="konum.yolTarifiButon">Yol Tarifi Al</span>
+        </a>
+      </div>
+
+      <div class="harita acilim">
+        <iframe class="harita__cerceve" id="harita-frame" title="Meltem Kız Apart konumu"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                data-src="https://www.google.com/maps?q=Erciyes%20%C3%9Cniversitesi%20Melikgazi%20Kayseri&output=embed"
+                data-db-attr="data-src:iletisim.haritaEmbed"></iframe>
+        <div class="harita__kapak" id="harita-kapak">
+          <svg class="ikon harita__pin"><use href="#ikon-map-pin"></use></svg>
+          <b data-db="iletisim.adresKisa">Melikgazi / Kayseri</b>
+          <button class="btn btn--ana btn--kucuk" id="harita-yukle">
+            <span data-db="konum.haritaButon">Haritayı Göster</span>
+          </button>
+          <small data-db="konum.haritaNot">Haritayı açtığınızda Google Maps çerezleri yüklenir.</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ YORUMLAR ════════════════════════════════════════════════════════ -->
+<section class="bolum bolum--krem yorumlar">
+  <div class="kapsayici">
+    <div class="bolum-basligi">
+      <span class="eyebrow">
+        <svg class="ikon"><use href="#ikon-star"></use></svg>
+        <span data-db="yorumlar.eyebrow">Yorumlar</span>
+      </span>
+      <h2 data-db="yorumlar.baslik">Bizde Kalanlar Ne Diyor?</h2>
+    </div>
+
+    <div class="swiper yorum-swiper">
+      <div class="swiper-wrapper" data-db-list="yorumlar.liste" data-db-tpl="tpl-yorum"></div>
+      <div class="yorum-swiper__sayfalama"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ S.S.S. ══════════════════════════════════════════════════════════ -->
+<section class="bolum" id="sss">
+  <div class="kapsayici kapsayici--dar">
+    <div class="bolum-basligi">
+      <span class="eyebrow">
+        <svg class="ikon"><use href="#ikon-book-open"></use></svg>
+        <span data-db="sss.eyebrow">S.S.S.</span>
+      </span>
+      <h2 data-db="sss.baslik">Sıkça Sorulan Sorular</h2>
+      <p class="lede" data-db="sss.lede">Aklınıza takılan başka bir şey varsa WhatsApp'tan yazmanız yeterli, hemen dönüyoruz.</p>
+    </div>
+
+    <div class="sss-liste" data-db-list="sss.liste" data-db-tpl="tpl-sss"></div>
+  </div>
+</section>
+
+<!-- ═══ KAPANIŞ ÇAĞRISI ═════════════════════════════════════════════════ -->
+<section class="cta" id="iletisim">
+  <div class="kapsayici">
+    <div class="cta__kutu">
+      <div class="cta__metin">
+        <h2 data-db="cta.baslik">Yerler Dolmadan Odanı Ayırt</h2>
+        <p data-db="cta.metin">Kayıt dönemi başladı ve sınırlı sayıda odamız kaldı. WhatsApp'tan yazın, müsait odaları ve güncel fiyatları hemen paylaşalım.</p>
+        <div class="cta__butonlar">
+          <a class="btn btn--wa btn--buyuk" href="#" target="_blank" rel="noopener" data-db-attr="href:iletisim.waLink">
+            <svg class="ikon ikon--marka"><use href="#ikon-whatsapp"></use></svg>
+            <span data-db="cta.butonAna">WhatsApp'tan Yaz</span>
+          </a>
+          <a class="btn btn--beyaz btn--buyuk" href="tel:+903521234567" data-db-attr="href:iletisim.telLink">
+            <svg class="ikon"><use href="#ikon-phone"></use></svg>
+            <span data-db="cta.butonIkincil">Hemen Ara</span>
+          </a>
+        </div>
+      </div>
+
+      <ul class="cta__bilgi">
+        <li>
+          <span class="cta__ikon"><svg class="ikon"><use href="#ikon-phone"></use></svg></span>
+          <div><small>Telefon</small>
+            <a href="tel:+903521234567" data-db-attr="href:iletisim.telLink" data-db="iletisim.telefon">0 (352) 123 45 67</a></div>
+        </li>
+        <li>
+          <span class="cta__ikon"><svg class="ikon"><use href="#ikon-mail"></use></svg></span>
+          <div><small>E-posta</small>
+            <a href="#" data-db-attr="href:iletisim.epostaLink" data-db="iletisim.eposta">info@meltemkizapart.com</a></div>
+        </li>
+        <li>
+          <span class="cta__ikon"><svg class="ikon"><use href="#ikon-map-pin"></use></svg></span>
+          <div><small>Adres</small>
+            <a href="#" target="_blank" rel="noopener" data-db-attr="href:iletisim.haritaUrl" data-db="iletisim.adres">Köşk Mah. Üniversite Cad. No: 42, Melikgazi / KAYSERİ</a></div>
+        </li>
+        <li>
+          <span class="cta__ikon"><svg class="ikon"><use href="#ikon-shield-check"></use></svg></span>
+          <div><small>Çalışma saatleri</small>
+            <span data-db="iletisim.calismaSaati">Her gün 09:00 – 21:00 arası ulaşabilirsiniz</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ══════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="kapsayici">
+    <div class="footer__ic">
+
+      <div class="footer__marka">
+        <a class="logo logo--footer" href="#hero">
+          <span class="logo__amblem" aria-hidden="true">
+            <svg class="ikon"><use href="#ikon-heart"></use></svg>
+          </span>
+          <span class="logo__yazi"><strong data-db="marka.ad">Meltem Kız Apart</strong></span>
+        </a>
+        <p data-db="footer.metin">Kayseri'de üniversite okuyan kızlarımız için güvenli, temiz ve sıcak bir yuva. 2015'ten bu yana aynı özenle.</p>
+        <ul class="sosyal" data-db-list="sosyal" data-db-tpl="tpl-sosyal"></ul>
+      </div>
+
+      <nav class="footer__menu" aria-label="Alt menü">
+        <h3>Menü</h3>
+        <ul data-db-list="navigasyon" data-db-tpl="tpl-nav">
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#odalar">Odalarımız</a></li>
+          <li><a href="#olanaklar">Olanaklar</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#konum">Konum</a></li>
+          <li><a href="#sss">S.S.S.</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__iletisim">
+        <h3>İletişim</h3>
+        <ul>
+          <li><a href="tel:+903521234567" data-db-attr="href:iletisim.telLink">
+            <svg class="ikon"><use href="#ikon-phone"></use></svg>
+            <span data-db="iletisim.telefon">0 (352) 123 45 67</span></a></li>
+          <li><a href="#" target="_blank" rel="noopener" data-db-attr="href:iletisim.waLink">
+            <svg class="ikon ikon--marka"><use href="#ikon-whatsapp"></use></svg>
+            <span>WhatsApp'tan yazın</span></a></li>
+          <li><a href="#" data-db-attr="href:iletisim.epostaLink">
+            <svg class="ikon"><use href="#ikon-mail"></use></svg>
+            <span data-db="iletisim.eposta">info@meltemkizapart.com</span></a></li>
+          <li><a href="#" target="_blank" rel="noopener" data-db-attr="href:iletisim.haritaUrl">
+            <svg class="ikon"><use href="#ikon-map-pin"></use></svg>
+            <span data-db="iletisim.adres">Köşk Mah. Üniversite Cad. No: 42, Melikgazi / KAYSERİ</span></a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__telif">
+      <span data-db="footer.telifSatiri">© 2026 Meltem Kız Apart. Tüm hakları saklıdır.</span>
+      <!-- htmx: uzun hukuki metin ilk yüklemede taşınmaz.
+           file:// üzerinde bu link yeni sekmede açılır (js/app.js). -->
+      <a href="partials/kvkk.html" data-modal-ac
+         hx-get="partials/kvkk.html" hx-target="#modal-govde" hx-swap="innerHTML">KVKK Aydınlatma Metni</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══ SABİT ÖĞELER ════════════════════════════════════════════════════ -->
+
+<!-- WhatsApp — masaüstünde sağ altta sabit, hover'da genişler -->
+<a class="wa-fab" href="#" target="_blank" rel="noopener"
+   data-db-attr="href:iletisim.waLink" aria-label="WhatsApp ile yazın">
+  <svg class="ikon ikon--marka"><use href="#ikon-whatsapp"></use></svg>
+  <span class="wa-fab__ipucu" data-db="sabitButonlar.waIpucu">WhatsApp'tan yazın</span>
+</a>
+
+<!-- Mobilde FAB yerine alt aksiyon çubuğu -->
+<nav class="altbar" aria-label="Hızlı iletişim">
+  <a href="tel:+903521234567" data-db-attr="href:iletisim.telLink">
+    <svg class="ikon"><use href="#ikon-phone"></use></svg>
+    <span data-db="sabitButonlar.altbarAra">Ara</span>
+  </a>
+  <a class="altbar__wa" href="#" target="_blank" rel="noopener" data-db-attr="href:iletisim.waLink">
+    <svg class="ikon ikon--marka"><use href="#ikon-whatsapp"></use></svg>
+    <span data-db="sabitButonlar.altbarWa">WhatsApp</span>
+  </a>
+  <a href="#" target="_blank" rel="noopener" data-db-attr="href:iletisim.haritaUrl">
+    <svg class="ikon"><use href="#ikon-navigation"></use></svg>
+    <span data-db="sabitButonlar.altbarYol">Yol Tarifi</span>
+  </a>
+</nav>
+
+<button class="yukari" id="yukari" aria-label="Sayfa başına dön">
+  <svg class="yukari__halka" viewBox="0 0 100 100" aria-hidden="true">
+    <circle class="yukari__iz" cx="50" cy="50" r="46"></circle>
+    <circle class="yukari__ilerleme" id="yukari-ilerleme" cx="50" cy="50" r="46"></circle>
+  </svg>
+  <svg class="ikon"><use href="#ikon-arrow-up"></use></svg>
+</button>
+
+<!-- KVKK modalı (içeriği htmx ile partials/kvkk.html'den gelir) -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__perde" data-modal-kapat></div>
+  <div class="modal__kutu" role="dialog" aria-modal="true" aria-labelledby="modal-baslik">
+    <div class="modal__ust">
+      <h2 id="modal-baslik">KVKK Aydınlatma Metni</h2>
+      <button class="ikon-btn" data-modal-kapat aria-label="Kapat">
+        <svg class="ikon"><use href="#ikon-x"></use></svg>
+      </button>
+    </div>
+    <div class="modal__govde" id="modal-govde">
+      <p>Yükleniyor…</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ ŞABLONLAR ═══════════════════════════════════════════════════════
+     db.js'teki listeler bu şablonlar klonlanarak basılır.
+     Şablon içindeki yollar KAYDA görelidir; genel değerler için "$." kullanılır.
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<template id="tpl-nav">
+  <li><a data-db="ad" data-db-attr="href:hedef">Menü</a></li>
+</template>
+
+<template id="tpl-cekmece-nav">
+  <li><a data-db-attr="href:hedef">
+    <svg class="ikon"><use href="#ikon-arrow-right"></use></svg>
+    <span data-db="ad">Menü</span>
+  </a></li>
+</template>
+
+<template id="tpl-sosyal">
+  <li><a class="ikon-btn" target="_blank" rel="noopener"
+         data-db-attr="href:url|aria-label:ad">
+    <svg class="ikon ikon--marka"><use data-db-attr="href:ikonHref"></use></svg>
+  </a></li>
+</template>
+
+<template id="tpl-istatistik">
+  <div class="sayi-kutu">
+    <b data-db="sayi">0</b>
+    <span data-db="etiket">Etiket</span>
+  </div>
+</template>
+
+<template id="tpl-hero-slayt">
+  <div class="swiper-slide hero-slayt">
+    <img class="hero-slayt__gorsel" width="1400" height="1050" decoding="async"
+         data-db-attr="src:src|alt:alt|loading:yukleme|fetchpriority:oncelik">
+    <div class="hero-slayt__perde"></div>
+    <div class="hero-slayt__yazi">
+      <span data-db="altBaslik"></span>
+      <h2 data-db="baslik"></h2>
+    </div>
+  </div>
+</template>
+
+<template id="tpl-guven">
+  <li>
+    <svg class="ikon"><use data-db-attr="href:ikonHref"></use></svg>
+    <span data-db="yazi"></span>
+  </li>
+</template>
+
+<template id="tpl-paragraf">
+  <p data-db="$deger"></p>
+</template>
+
+<template id="tpl-tik">
+  <li>
+    <svg class="ikon"><use href="#ikon-check"></use></svg>
+    <span data-db="$deger"></span>
+  </li>
+</template>
+
+<template id="tpl-oda">
+  <article class="oda acilim" data-db-attr="style:$gecikmeStil">
+    <div class="oda__gorsel">
+      <img width="900" height="675" loading="lazy" decoding="async"
+           data-db-attr="src:gorsel|alt:gorselAlt">
+      <span class="oda__rozet" data-db="rozet" data-db-if="rozet"></span>
+      <span class="oda__metre">
+        <svg class="ikon"><use href="#ikon-ruler"></use></svg>
+        <span data-db="metre"></span>
+      </span>
+    </div>
+
+    <div class="oda__govde">
+      <h3 data-db="ad"></h3>
+      <p class="oda__aciklama" data-db="aciklama"></p>
+
+      <ul class="tik-liste tik-liste--kucuk" data-db-list="ozellikler" data-db-tpl="tpl-tik"></ul>
+
+      <div class="oda__alt">
+        <div class="oda__fiyat">
+          <b data-db="fiyat"></b>
+          <small data-db="fiyatBirim"></small>
+        </div>
+        <a class="btn btn--wa btn--kucuk" target="_blank" rel="noopener" data-db-attr="href:waLink">
+          <svg class="ikon ikon--marka"><use href="#ikon-whatsapp"></use></svg>
+          <span data-db="$.odalar.butonYazi">Bilgi Al</span>
+        </a>
+      </div>
+    </div>
+  </article>
+</template>
+
+<template id="tpl-olanak">
+  <div class="olanak acilim" data-db-attr="style:$gecikmeStil">
+    <span class="olanak__ikon">
+      <svg class="ikon"><use data-db-attr="href:ikonHref"></use></svg>
+    </span>
+    <h3 data-db="baslik"></h3>
+    <p data-db="metin"></p>
+  </div>
+</template>
+
+<template id="tpl-galeri">
+  <a class="galeri-karo acilim acilim--sade" data-glightbox data-gallery="apart"
+     data-db-attr="href:src|data-description:alt">
+    <img width="600" height="450" loading="lazy" decoding="async"
+         data-db-attr="src:kucuk|alt:alt">
+    <span class="galeri-karo__perde" aria-hidden="true"></span>
+  </a>
+</template>
+
+<template id="tpl-yakin">
+  <li>
+    <span class="yakin__ikon"><svg class="ikon"><use data-db-attr="href:ikonHref"></use></svg></span>
+    <span class="yakin__ad" data-db="ad"></span>
+    <span class="yakin__mesafe" data-db="mesafe"></span>
+  </li>
+</template>
+
+<template id="tpl-yorum">
+  <div class="swiper-slide">
+    <figure class="yorum">
+      <svg class="ikon yorum__tirnak"><use href="#ikon-quote"></use></svg>
+      <div class="yildizlar" data-db-attr="aria-label:puanEtiket">
+        <span class="yildizlar__bos" aria-hidden="true">
+          <svg class="ikon"><use href="#ikon-star"></use></svg><svg class="ikon"><use href="#ikon-star"></use></svg><svg class="ikon"><use href="#ikon-star"></use></svg><svg class="ikon"><use href="#ikon-star"></use></svg><svg class="ikon"><use href="#ikon-star"></use></svg>
+        </span>
+        <span class="yildizlar__dolu" aria-hidden="true" data-db-attr="style:yildizStil">
+          <svg class="ikon"><use href="#ikon-star"></use></svg><svg class="ikon"><use href="#ikon-star"></use></svg><svg class="ikon"><use href="#ikon-star"></use></svg><svg class="ikon"><use href="#ikon-star"></use></svg><svg class="ikon"><use href="#ikon-star"></use></svg>
+        </span>
+      </div>
+      <blockquote data-db="metin"></blockquote>
+      <figcaption>
+        <img width="120" height="120" loading="lazy" decoding="async" alt=""
+             data-db-attr="src:avatar">
+        <span>
+          <b data-db="ad"></b>
+          <small data-db="rol"></small>
+        </span>
+      </figcaption>
+    </figure>
+  </div>
+</template>
+
+<template id="tpl-sss">
+  <details class="sss-oge">
+    <summary>
+      <span data-db="soru"></span>
+      <svg class="ikon sss-oge__ok"><use href="#ikon-chevron-down"></use></svg>
+    </summary>
+    <div class="sss-oge__cevap"><p data-db="cevap"></p></div>
+  </details>
+</template>
+
+
+<!-- ═══ SCRIPTLER ═══════════════════════════════════════════════════════
+     Sıra önemli:  db.js (içerik) → render.js (HTML'e yazar) → app.js (davranış)
+     app.js, Swiper/GLightbox'ı ancak içerik yazıldıktan sonra başlatır.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<script defer src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js"></script>
+
+<!-- ?v= sonundaki numarayı, db.js'i değiştirdikten sonra yayınlarken artırın.
+     Böylece ziyaretçilerin tarayıcısı eski içeriği önbellekten göstermez. -->
+<script defer src="js/db.js?v=1"></script>
+<script defer src="js/render.js?v=1"></script>
+<script defer src="js/app.js?v=1"></script>
+
+</body>
+</html>
