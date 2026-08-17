@@ -107,32 +107,37 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex-shrink: 0;
 }
-.logo__amblem {
-  display: grid;
-  place-items: center;
-  width: 42px; height: 42px;
-  border-radius: 14px;
-  background: linear-gradient(140deg, var(--renk-ana) 0%, var(--renk-ana-koyu) 100%);
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(181, 131, 141, .38);
+
+/* Logo dikey bir kilit (ev + isim alt alta), bu yüzden yatay bir menüde
+   okunaklı kalması için normalden yüksek tutuluyor. */
+.logo__resim {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
 }
-.logo__amblem .ikon { width: 21px; height: 21px; fill: currentColor; stroke: none; }
-.logo__yazi { display: flex; flex-direction: column; line-height: 1.25; }
-.logo__yazi strong {
-  font-size: 1.0625rem;
-  font-weight: var(--fw-siyah);
-  letter-spacing: -.02em;
-  color: var(--renk-metin);
-}
-.logo__yazi small {
-  font-size: .6875rem;
+
+/* Logo markayı zaten yazıyor; yanında sadece konum satırı duruyor */
+.logo__yer {
+  padding-left: 14px;
+  border-left: 1px solid var(--renk-cizgi);
+  font-size: .75rem;
   font-weight: var(--fw-orta);
-  color: var(--renk-muted);
   letter-spacing: .04em;
+  color: var(--renk-muted);
+  white-space: nowrap;
 }
+
+/* Koyu footer'da logonun koyu mürdüm kısımları okunmuyor — beyaza çeviriyoruz */
+.logo--footer .logo__resim {
+  height: 76px;
+  filter: brightness(0) invert(1);
+  opacity: .92;
+  transition: opacity var(--gecis-hizli);
+}
+.logo--footer:hover .logo__resim { opacity: 1; }
 
 /* ── Header ────────────────────────────────────────────────── */
 
@@ -141,7 +146,7 @@
   top: 0; left: 0;
   width: 100%;
   z-index: var(--z-header);
-  padding-block: 18px;
+  padding-block: 14px;
   transition: padding var(--gecis), background var(--gecis), box-shadow var(--gecis);
 }
 
@@ -223,8 +228,8 @@
   .header__pill { padding: 8px 8px 8px 14px; gap: 12px; }
   .header__menu { display: none; }
   .ikon-btn--hamburger { display: inline-flex; }
-  .logo__amblem { width: 38px; height: 38px; border-radius: 12px; }
-  .logo__yazi strong { font-size: .9375rem; }
+  .logo__resim { height: 48px; }
+  .logo__yer { display: none; }        /* dar ekranda hamburgere yer aç */
 }
 
 /* ── Mobil çekmece ─────────────────────────────────────────── */

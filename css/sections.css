@@ -716,7 +716,6 @@
   border-bottom: 1px solid var(--koyu-cizgi);
 }
 .footer__marka p { margin-top: 18px; font-size: .9375rem; line-height: 1.8; max-width: 42ch; }
-.logo--footer .logo__yazi strong { color: #fff; }
 
 .footer h3 {
   font-size: .8125rem;

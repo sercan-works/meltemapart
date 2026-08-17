@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   MELTEM KIZ APART — TASARIM TOKENLERİ
+   MELTEMPARK KIZ APART — TASARIM TOKENLERİ
    Renk, tipografi, boşluk ve gölge değerleri sadece burada tanımlı.
    Sitenin genel görünümünü değiştirmek için bu dosya yeterlidir.
    ═══════════════════════════════════════════════════════════════ */
@@ -74,7 +74,7 @@
   --bolum-padding: 120px;      /* mobilde 48px'e iner */
   --baslik-bosluk: 80px;       /* başlık bloğu → içerik */
   --kapsayici: 1240px;
-  --header-yukseklik: 88px;
+  --header-yukseklik: 118px;   /* logo yüksekliğine bağlı — ölçülen değer */
 
   /* ── Geçiş ───────────────────────────────────────────────── */
   --gecis-hizli: .18s ease;
@@ -101,7 +101,7 @@
   :root {
     --bolum-padding: 72px;
     --baslik-bosluk: 44px;
-    --header-yukseklik: 64px;
+    --header-yukseklik: 82px;
   }
 }
 

@@ -35,7 +35,10 @@ whatsapp: "905322773801",            // ← + ve boşluk OLMADAN, ülke koduyla
 | Mobildeki alt çubuk |
 | Kapanış bölümü ve footer |
 
-Aynı şekilde `marka.ad` başlıkta, logoda, çekmecede, footer'da ve Google'a gönderilen yapısal veride görünür.
+Aynı şekilde `marka.ad` sayfa başlığında, logonun `alt` metninde, çekmecede, footer'da ve
+Google'a gönderilen yapısal veride görünür. Logo dosyasını değiştirmek için `marka.logo`
+satırındaki yolu güncellemeniz yeterli — hem üst menüdeki hem footer'daki logo birlikte değişir.
+Footer koyu zeminli olduğu için logo orada otomatik olarak beyaza çevrilir (CSS filtresi).
 
 ---
 
@@ -93,10 +96,13 @@ meltemapart/
 ├── partials/
 │   ├── kvkk.html       Aydınlatma metni (htmx ile modala yüklenir)
 │   └── galeri-devami.html  Ek fotoğraflar (istenince yüklenir)
-└── assets/img/
-    ├── favicon.svg     Sekme ikonu
-    ├── placeholder.svg Fotoğraf yüklenemezse gösterilen yedek
-    └── apart/          Apartın fotoğrafları (17 adet)
+└── assets/
+    ├── logo.png        Logonun orijinali (1284px, şeffaf)
+    └── img/
+        ├── logo.png    Web için küçültülmüş logo (440px) — sitede bu kullanılır
+        ├── favicon.svg Sekme ikonu
+        ├── placeholder.svg  Fotoğraf yüklenemezse gösterilen yedek
+        └── apart/      Apartın fotoğrafları (17 adet)
 ```
 
 ### Sitenin renklerini değiştirmek

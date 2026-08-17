@@ -33,6 +33,9 @@ window.SITE = {
   marka: {
     ad: "Meltempark Kız Apart",
     kisaAd: "Meltempark",
+    // Üst menüdeki ve footer'daki logo. Şeffaf arka planlı PNG/SVG önerilir.
+    // (assets/logo.png orijinal boyut; assets/img/logo.png web için küçültülmüş hali)
+    logo: "assets/img/logo.png",
     slogan: "Çeyrek asırdır eğitimci bir ailenin emanetindesiniz.",
     kurulusYili: "25+"
   },
